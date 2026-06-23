@@ -1,18 +1,1 @@
-
-body{margin:0;font-family:Arial,sans-serif}
-.hero{
-min-height:70vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-background:#0D1B2A;
-color:white;
-animation:zoom 40s infinite alternate;
-}
-@keyframes zoom{
-from{transform:scale(1)}
-to{transform:scale(1.1)}
-}
-nav{padding:15px}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#F7F3EE;color:#222}.navbar{position:sticky;top:0;background:#0D1B2A;color:#fff;padding:15px;display:flex;justify-content:space-between}.navbar a{color:#fff;text-decoration:none;margin-left:15px}.hero{min-height:90vh;background:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),url('https://images-assets.nasa.gov/image/iss040e090540/iss040e090540~medium.jpg') center/cover;color:#fff;display:flex;align-items:center;justify-content:center;text-align:center}.overlay{padding:20px}.btn{background:#C4622D;color:#fff;padding:12px 20px;border-radius:6px;text-decoration:none}.section{padding:50px 20px}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px}.card{background:#fff;padding:20px;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,.1)}footer{background:#0D1B2A;color:#fff;text-align:center;padding:20px}
