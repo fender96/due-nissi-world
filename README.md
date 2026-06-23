@@ -1,2 +1,2 @@
-# due-nissi-world
-Due Nissi in giro per il mondo
+# Due Nissi V4 Lite
+Versione iniziale in italiano.
