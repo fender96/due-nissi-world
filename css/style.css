@@ -1,4 +1,4 @@
-/* ===== Due Nissi V4.2 ===== */
+/* ===== Due Nissi V4.3 ===== */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap');
 
 /* ===== TOKENS ===== */
@@ -92,28 +92,15 @@ h3 { font-size: 1.25rem; }
 }
 .hero-bg {
   position: absolute; inset: 0;
-  background: radial-gradient(ellipse at center, #1a3a5c 0%, #0D1B2A 70%);
+  background-color: #0D1B2A;
+  background-size: cover;
+  background-position: center;
   animation: kenburns 40s ease-in-out infinite alternate;
+  transform-origin: center center;
 }
 @keyframes kenburns {
-  from { transform: scale(1);   filter: brightness(.9); }
-  to   { transform: scale(1.08); filter: brightness(1.05); }
-}
-/* starfield overlay */
-.hero-bg::before {
-  content: '';
-  position: absolute; inset: 0;
-  background-image:
-    radial-gradient(1px 1px at 10% 20%, rgba(255,255,255,.7) 0%, transparent 100%),
-    radial-gradient(1px 1px at 25% 70%, rgba(255,255,255,.5) 0%, transparent 100%),
-    radial-gradient(1.5px 1.5px at 50% 15%, rgba(255,255,255,.8) 0%, transparent 100%),
-    radial-gradient(1px 1px at 70% 60%, rgba(255,255,255,.6) 0%, transparent 100%),
-    radial-gradient(1px 1px at 85% 30%, rgba(255,255,255,.5) 0%, transparent 100%),
-    radial-gradient(2px 2px at 40% 85%, rgba(255,255,255,.4) 0%, transparent 100%),
-    radial-gradient(1px 1px at 90% 80%, rgba(255,255,255,.6) 0%, transparent 100%),
-    radial-gradient(1px 1px at 15% 50%, rgba(255,255,255,.4) 0%, transparent 100%),
-    radial-gradient(1.5px 1.5px at 60% 40%, rgba(255,255,255,.7) 0%, transparent 100%),
-    radial-gradient(1px 1px at 35% 35%, rgba(255,255,255,.5) 0%, transparent 100%);
+  from { transform: scale(1);   filter: brightness(.75); }
+  to   { transform: scale(1.12); filter: brightness(.9); }
 }
 .hero-overlay {
   position: absolute; inset: 0;
@@ -189,17 +176,23 @@ h3 { font-size: 1.25rem; }
 }
 .continent-card:hover { transform: translateY(-5px); box-shadow: 0 12px 36px rgba(13,27,42,.18); }
 .continent-card-img {
-  height: 180px;
+  height: 200px;
   background: var(--navy);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 3.5rem;
+  background-size: cover;
+  background-position: center;
   position: relative; overflow: hidden;
+  transition: transform .5s ease;
 }
-.continent-card-img .continent-emoji { position: relative; z-index: 1; }
-.continent-card-img .continent-glow {
+.continent-card:hover .continent-card-img {
+  transform: scale(1.04);
+}
+.continent-card-overlay {
   position: absolute; inset: 0;
-  background: radial-gradient(ellipse at center, var(--burnt) 0%, transparent 70%);
-  opacity: .25;
+  background: linear-gradient(to top, rgba(13,27,42,.6) 0%, rgba(13,27,42,.15) 100%);
+  transition: opacity .3s;
+}
+.continent-card:hover .continent-card-overlay {
+  opacity: .7;
 }
 .continent-card-body { padding: 1.4rem 1.5rem 1.6rem; }
 .continent-card-body h3 { color: var(--navy); margin-bottom: .5rem; }
