@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Città — Due Nissi</title>
+  <meta name="description" content="">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <a class="navbar-logo" href="index.html"><span class="globe">🌍</span> Due Nissi</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="chi-siamo.html">Chi Siamo</a></li>
+    <li><a href="index.html#continents">Continenti</a></li>
+  </ul>
+  <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu">
+  <a href="index.html">Home</a>
+  <a href="chi-siamo.html">Chi Siamo</a>
+  <a href="index.html#continents">Continenti</a>
+</div>
+
+<!-- BANNER — popolato da JS -->
+<div class="page-banner" id="banner">
+  <div class="banner-overlay"></div>
+  <div class="banner-content">
+    <p class="breadcrumb" id="breadcrumb"></p>
+    <h1 id="banner-title"></h1>
+    <p class="banner-sub" id="banner-sub"></p>
+  </div>
+</div>
+
+<!-- SEZIONI — popolato da JS -->
+<div id="sections-container"></div>
+
+<!-- STATO VUOTO (nascosto di default) -->
+<section id="empty-state" class="section" style="display:none; background:var(--white); text-align:center;">
+  <div class="section-inner">
+    <p style="font-size:3rem; margin-bottom:1rem;">✍️</p>
+    <h2 class="section-title" style="color:var(--navy);">Stiamo scrivendo...</h2>
+    <p class="section-lead" style="margin:0 auto;">
+      Abbiamo visitato questa città ma non abbiamo ancora scritto la guida completa.<br>
+      Torna presto — ci stiamo lavorando!
+    </p>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo">🌍 Due Nissi</div>
+      <p>Due appassionati viaggiatori che condividono esperienze autentiche, guide reali e itinerari testati in tutto il mondo.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Naviga</h5>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="chi-siamo.html">Chi Siamo</a></li>
+        <li><a href="index.html#continents">Continenti</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Legale</h5>
+      <ul>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Cookie Policy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© Due Nissi — Tutti i diritti riservati</span>
+    <div class="footer-bottom-links"><a href="#">Privacy</a><a href="#">Cookie</a></div>
+  </div>
+</footer>
+
+<script src="js/app.js"></script>
+<script>
+/* ===== Helpers ===== */
+function poiCard(item) {
+  const bookBtn    = item.book_url
+    ? `<a href="${item.book_url}" target="_blank" rel="noopener" class="btn btn-book">🎟 Prenota</a>` : '';
+  const websiteBtn = item.website_url
+    ? `<a href="${item.website_url}" target="_blank" rel="noopener" class="btn btn-website">🌐 Sito ufficiale</a>` : '';
+  return `
+    <div class="poi-card">
+      <div class="poi-card-head">
+        <div class="poi-title-row">
+          <h3>${item.name}</h3>
+          <a class="maps-link" href="${item.maps_url}" target="_blank" rel="noopener">📍 Maps</a>
+        </div>
+        <div class="poi-badges">
+          <span class="badge badge-tested">🏅 Testato dai Nissi</span>
+          <span class="badge badge-rating">⭐ ${item.rating} / 10</span>
+        </div>
+      </div>
+      <div class="poi-card-body">
+        <div class="poi-tip"><span class="tip-icon">💡</span><span>${item.tip}</span></div>
+        <p class="poi-desc clamped">${item.description}</p>
+        <button class="poi-expand">▼ Espandi</button>
+      </div>
+      <div class="poi-card-foot">
+        <a href="${item.maps_url}" target="_blank" rel="noopener" class="btn btn-maps">📍 Google Maps</a>
+        ${bookBtn}${websiteBtn}
+      </div>
+    </div>`;
+}
+
+function poiSection(sec, idx) {
+  const bg = sec.background === 'white' ? 'var(--white)' : 'var(--cream)';
+  return `
+    <section class="poi-section" style="background:${bg};">
+      <div class="poi-inner">
+        <p class="section-tag">${sec.tag}</p>
+        <h2 class="section-title">${sec.title}</h2>
+        <div class="divider"></div>
+        <div class="poi-grid">
+          ${sec.items.map(poiCard).join('')}
+        </div>
+      </div>
+    </section>`;
+}
+
+function itinerarySection(sec) {
+  const steps = sec.steps.map((s, i) => `
+    <div class="itinerary-step">
+      <div class="step-num">${i + 1}</div>
+      <div class="step-body">
+        <h4>${s.time} — ${s.title}</h4>
+        <p>${s.description}</p>
+      </div>
+    </div>`).join('');
+  return `
+    <section class="itinerary-section">
+      <div class="itinerary-inner">
+        <p class="section-tag">${sec.tag}</p>
+        <h2 class="section-title">${sec.title}</h2>
+        <div class="divider"></div>
+        <p style="color:rgba(232,213,176,.7);font-size:.92rem;margin-bottom:2rem;">${sec.intro}</p>
+        <div class="itinerary-steps">${steps}</div>
+      </div>
+    </section>`;
+}
+
+/* ===== Main ===== */
+(async () => {
+  const params      = new URLSearchParams(location.search);
+  const continentId = params.get('c');
+  const countryId   = params.get('co');
+  const cityId      = params.get('ci');
+  if (!continentId || !countryId || !cityId) return;
+
+  const [resCont, resCountry, resCity] = await Promise.all([
+    fetch(`content/${continentId}/continent.json`),
+    fetch(`content/${continentId}/${countryId}/country.json`),
+    fetch(`content/${continentId}/${countryId}/${cityId}/city.json`)
+  ]);
+  if (!resCont.ok || !resCountry.ok || !resCity.ok) return;
+
+  const continent = await resCont.json();
+  const country   = await resCountry.json();
+  const data      = await resCity.json();
+
+  // Meta
+  document.title = `${data.name} — Due Nissi`;
+  document.querySelector('meta[name="description"]').content =
+    `La nostra guida a ${data.name}: monumenti, attività e ristoranti testati dai Due Nissi.`;
+
+  // Banner
+  const banner = document.getElementById('banner');
+  if (data.banner_image) {
+    banner.style.backgroundImage = `url('${data.banner_image}')`;
+    banner.style.backgroundSize  = 'cover';
+    banner.style.backgroundPosition = data.banner_position || 'center';
+  }
+  document.getElementById('banner-title').textContent = data.name;
+  document.getElementById('banner-sub').textContent   = data.subtitle;
+
+  // Breadcrumb
+  document.getElementById('breadcrumb').innerHTML =
+    `<a href="index.html">Home</a> › ` +
+    `<a href="continent.html?c=${continentId}">${continent.name}</a> › ` +
+    `<a href="country.html?c=${continentId}&co=${countryId}">${country.name}</a>`;
+
+  // Sezioni
+  const container = document.getElementById('sections-container');
+  if (!data.sections || data.sections.length === 0) {
+    document.getElementById('empty-state').style.display = '';
+  } else {
+    data.sections.forEach((sec, idx) => {
+      if (sec.type === 'poi')        container.insertAdjacentHTML('beforeend', poiSection(sec, idx));
+      if (sec.type === 'itinerary')  container.insertAdjacentHTML('beforeend', itinerarySection(sec));
+    });
+    // Riattiva expand dopo render dinamico
+    document.querySelectorAll('.poi-expand').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const desc = btn.previousElementSibling;
+        if (!desc) return;
+        desc.classList.toggle('clamped');
+        btn.textContent = desc.classList.contains('clamped') ? '▼ Espandi' : '▲ Riduci';
+      });
+    });
+  }
+})();
+</script>
+</body>
+</html>

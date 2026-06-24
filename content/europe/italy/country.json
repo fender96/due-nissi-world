@@ -1,0 +1,37 @@
+{
+  "id": "italy",
+  "continent": "europe",
+  "name": "Italia",
+  "subtitle": "Arte, sapori e storie dietro ogni vicolo",
+  "banner_image": "images/italia-trevi.jpg",
+  "banner_position": "center 30%",
+  "section_tag": "città visitate",
+  "section_title": "Le nostre città italiane",
+  "section_lead": "Non solo i soliti highlight: ogni città raccontata con i luoghi dove abbiamo mangiato, dormito e perso il senso del tempo.",
+  "cities": [
+    {
+      "id": "rome",
+      "name": "Roma",
+      "description": "La città eterna: Colosseo, Trastevere e una carbonara che vale il viaggio.",
+      "emoji": "🏛️",
+      "image": "images/europa-colosseo.jpg",
+      "active": true
+    },
+    {
+      "id": "venice",
+      "name": "Venezia",
+      "description": "Canali, cichetti e tramonti sul Canal Grande — prossimamente.",
+      "emoji": "⛵",
+      "image": null,
+      "active": false
+    },
+    {
+      "id": "naples",
+      "name": "Napoli",
+      "description": "Pizza, Spaccanapoli e il Vesuvio — prossimamente.",
+      "emoji": "🍋",
+      "image": null,
+      "active": false
+    }
+  ]
+}
