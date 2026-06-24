@@ -1,10 +1,127 @@
 {
+  "id": "rome",
+  "country": "italy",
+  "continent": "europe",
   "name": "Roma",
-  "features": [
-    "Testato dai Nissi",
-    "Consiglio dei Nissi",
-    "Budget reale",
-    "Percorso reale",
-    "Se avessimo solo un giorno"
+  "subtitle": "La città eterna",
+  "banner_image": "images/europa-colosseo.jpg",
+  "banner_position": "center 40%",
+  "sections": [
+    {
+      "type": "poi",
+      "tag": "cosa vedere",
+      "title": "Monumenti",
+      "background": "cream",
+      "items": [
+        {
+          "name": "Colosseo",
+          "maps_url": "https://maps.google.com/?q=Colosseo,Roma",
+          "rating": "9.5",
+          "tip": "Arriva all'apertura (9:00) per evitare le file: almeno 30 minuti prima se in estate.",
+          "description": "L'anfiteatro più grande mai costruito nell'antichità accoglie oggi circa 6 milioni di visitatori l'anno — ma non lo diresti, se ci vai la mattina presto. La struttura, iniziata da Vespasiano nel 72 d.C. e inaugurata da Tito nell'80, riesce ancora a togliere il fiato nonostante secoli di spoliazioni e terremoti. Con i biglietti combinati (inclusi Foro Romano e Palatino) il rapporto qualità-prezzo è eccellente. Evita l'audio-guida ufficiale e scarica un podcast gratuito: il racconto è più ricco e puoi fermarti dove vuoi.",
+          "book_url": "https://www.coopculture.it",
+          "website_url": "https://colosseo.it"
+        },
+        {
+          "name": "Pantheon",
+          "maps_url": "https://maps.google.com/?q=Pantheon,Roma",
+          "rating": "9.0",
+          "tip": "Vai in un giorno di pioggia: vedere l'acqua cadere dall'oculus è un'esperienza unica.",
+          "description": "Costruito da Adriano tra il 118 e il 128 d.C. sul sito di un precedente tempio, il Pantheon è il monumento antico meglio conservato di Roma. La sua cupola in calcestruzzo, con l'oculus centrale di 9 metri, rimase la più grande al mondo per oltre 1.300 anni. Dal 2023 è richiesto un biglietto d'ingresso (5€), ma vale assolutamente ogni centesimo. La piazza antistante, Piazza della Rotonda, è ideale per una sosta caffè prima o dopo la visita.",
+          "book_url": "https://www.pantheonroma.com",
+          "website_url": "https://www.pantheonroma.com"
+        },
+        {
+          "name": "Fontana di Trevi",
+          "maps_url": "https://maps.google.com/?q=Fontana+di+Trevi,Roma",
+          "rating": "8.5",
+          "tip": "Visita all'alba: alle 6-7 di mattina la trovi quasi deserta — uno spettacolo raro.",
+          "description": "La fontana più famosa del mondo (e, ammettiamolo, anche la più fotografata) è ancora capace di sorprendere se la si incontra girando per i vicoli, senza averla cercata. Il progetto di Nicola Salvi fu completato nel 1762 e la leggenda della moneta lanciata assicura il ritorno a Roma. Dal 2024 è necessario pagare un biglietto per avvicinarsi (2€): piccolo prezzo per tenere la piazza più vivibile. Noi la consigliamo in abbinata con una passeggiata serale fino a Piazza di Spagna.",
+          "book_url": null,
+          "website_url": null
+        },
+        {
+          "name": "Musei Vaticani & Cappella Sistina",
+          "maps_url": "https://maps.google.com/?q=Musei+Vaticani,Roma",
+          "rating": "9.8",
+          "tip": "Prenota online con almeno una settimana di anticipo: le code walk-in possono superare le 3 ore.",
+          "description": "I Musei Vaticani ospitano una delle collezioni d'arte più straordinarie al mondo, frutto di secoli di acquisizioni papali. La Cappella Sistina con il capolavoro di Michelangelo è il punto culminante di una visita che merita almeno mezza giornata. Consigliamo il tour con guida in gruppi piccoli (max 15 persone): si accede ai percorsi normalmente chiusi al pubblico e si capisce davvero quello che si sta guardando. Abbinate la visita alla Basilica di San Pietro per una mattinata indimenticabile.",
+          "book_url": "https://www.museivaticani.va",
+          "website_url": "https://www.museivaticani.va"
+        }
+      ]
+    },
+    {
+      "type": "poi",
+      "tag": "cosa fare",
+      "title": "Attività",
+      "background": "white",
+      "items": [
+        {
+          "name": "Passeggiata nel Trastevere",
+          "maps_url": "https://maps.google.com/?q=Trastevere,Roma",
+          "rating": "9.7",
+          "tip": "La sera è il momento migliore: le piazze si animano e le luci dei locali creano un'atmosfera unica.",
+          "description": "Trastevere è forse il quartiere più autentico di Roma: vicoli acciottolati, edera sui muri ocra e un'energia vivace che non si trova altrove. È il posto dove ci siamo persi (nel senso buono) più volte. Partendo da Piazza Santa Maria in Trastevere si possono esplorare tutte le strade del rione in meno di due ore, concludendo con una sosta in osteria. Attenzione: d'estate è molto affollato la sera — meglio una visita mattutina per goderselo in pace.",
+          "book_url": null,
+          "website_url": null
+        }
+      ]
+    },
+    {
+      "type": "poi",
+      "tag": "dove mangiare",
+      "title": "Ristoranti",
+      "background": "cream",
+      "items": [
+        {
+          "name": "Da Enzo al 29",
+          "maps_url": "https://maps.google.com/?q=Da+Enzo+al+29+Roma",
+          "rating": "9.6",
+          "tip": "Prenota con almeno 2-3 giorni di anticipo: è piccolo e sempre pieno. La cacio e pepe è leggendaria.",
+          "description": "Nascosto in una traversa di Trastevere, Da Enzo al 29 è la trattoria romana per eccellenza: tovaglie a quadri, menu scritto a mano, camerieri che ti trattano come di casa. Abbiamo assaggiato la cacio e pepe, la carbonara e il coda alla vaccinara: tutti perfetti. I prezzi sono onestissimi per la qualità (pasta sui 12-14€). Budget medio a persona: 25-35€ incluso vino della casa. Uno dei pochi posti dove non ti senti mai una macchina da soldi.",
+          "book_url": "tel:+390658816335",
+          "website_url": null
+        }
+      ]
+    },
+    {
+      "type": "itinerary",
+      "tag": "percorso reale",
+      "title": "Se avessimo solo un giorno",
+      "intro": "L'itinerario ottimizzato che faremmo oggi, senza perdere un minuto, partendo alle 8 di mattina.",
+      "steps": [
+        {
+          "time": "08:00",
+          "title": "Colosseo & Foro Romano",
+          "description": "Entrare all'apertura, prima dei pullman turistici. Dedicare 2 ore al complesso."
+        },
+        {
+          "time": "10:30",
+          "title": "Cappella Sistina & Vaticano",
+          "description": "Con prenotazione online si entra subito. Almeno 2,5 ore per non correre."
+        },
+        {
+          "time": "13:30",
+          "title": "Pranzo in Prati",
+          "description": "Il quartiere accanto al Vaticano, lontano dai locali-trappola per turisti."
+        },
+        {
+          "time": "15:00",
+          "title": "Pantheon & Campo de' Fiori",
+          "description": "A piedi tra i vicoli del centro storico. Sosta gelato obbligatoria."
+        },
+        {
+          "time": "17:00",
+          "title": "Fontana di Trevi & Piazza di Spagna",
+          "description": "La luce del tardo pomeriggio è perfetta per le foto. Moneta in fontana: d'obbligo."
+        },
+        {
+          "time": "20:00",
+          "title": "Cena a Trastevere",
+          "description": "Da Enzo al 29 o qualsiasi trattoria senza menu plastificato in vetrina."
+        }
+      ]
+    }
   ]
 }

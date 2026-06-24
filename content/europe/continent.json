@@ -1,0 +1,36 @@
+{
+  "id": "europe",
+  "name": "Europa",
+  "subtitle": "Il nostro continente, come non lo hai mai letto",
+  "banner_image": "images/europa-colosseo.jpg",
+  "banner_position": "center",
+  "section_tag": "paesi visitati",
+  "section_title": "Dove siamo stati in Europa",
+  "section_lead": "Una selezione crescente di destinazioni europee raccontate in prima persona, con mappe, costi reali e i nostri itinerari.",
+  "countries": [
+    {
+      "id": "italy",
+      "name": "Italia",
+      "description": "Arte, sapori e dolce vita: la nostra guida al Bel Paese tra città d'arte e borghi nascosti.",
+      "emoji": "🍕",
+      "image": null,
+      "active": true
+    },
+    {
+      "id": "france",
+      "name": "Francia",
+      "description": "Parigi, Provenza e Costa Azzurra — prossimamente.",
+      "emoji": "🥐",
+      "image": null,
+      "active": false
+    },
+    {
+      "id": "netherlands",
+      "name": "Paesi Bassi",
+      "description": "Amsterdam, i tulipani e i canali — prossimamente.",
+      "emoji": "🌷",
+      "image": null,
+      "active": false
+    }
+  ]
+}

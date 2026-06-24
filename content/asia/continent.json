@@ -1,0 +1,36 @@
+{
+  "id": "asia",
+  "name": "Asia",
+  "subtitle": "Templi, sapori e tramonti che tolgono il fiato",
+  "banner_image": "images/asia-kinkakuji.jpg",
+  "banner_position": "center",
+  "section_tag": "paesi visitati",
+  "section_title": "Dove siamo stati in Asia",
+  "section_lead": "Dal caos elettrico di Bangkok alle acque cristalline di Krabi: l'Asia raccontata senza filtri, con i prezzi reali e i posti che nessuna guida cartacea aggiorna.",
+  "countries": [
+    {
+      "id": "thailand",
+      "name": "Thailandia",
+      "description": "Templi dorati, spiagge di smeraldo e street food che cambia la vita: la Thailandia nei nostri occhi.",
+      "emoji": "🛕",
+      "image": "images/thailandia-tempio.jpg",
+      "active": true
+    },
+    {
+      "id": "japan",
+      "name": "Giappone",
+      "description": "Tokyo, Kyoto e la precisione giapponese — prossimamente.",
+      "emoji": "🌸",
+      "image": "images/asia-kinkakuji.jpg",
+      "active": false
+    },
+    {
+      "id": "vietnam",
+      "name": "Vietnam",
+      "description": "Halong Bay, Hoi An e la pho alle 6 di mattina — prossimamente.",
+      "emoji": "🛶",
+      "image": null,
+      "active": false
+    }
+  ]
+}

@@ -95,7 +95,7 @@ h3 { font-size: 1.25rem; }
   background-color: #0D1B2A;
   background-size: cover;
   background-position: center;
-  animation: kenburns 40s ease-in-out infinite alternate;
+  animation: kenburns 28s ease-in-out infinite alternate;
   transform-origin: center center;
 }
 @keyframes kenburns {

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Paese — Due Nissi</title>
+  <meta name="description" content="">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <a class="navbar-logo" href="index.html"><span class="globe">🌍</span> Due Nissi</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="chi-siamo.html">Chi Siamo</a></li>
+    <li><a href="index.html#continents">Continenti</a></li>
+  </ul>
+  <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu">
+  <a href="index.html">Home</a>
+  <a href="chi-siamo.html">Chi Siamo</a>
+  <a href="index.html#continents">Continenti</a>
+</div>
+
+<!-- BANNER — popolato da JS -->
+<div class="page-banner" id="banner">
+  <div class="banner-overlay"></div>
+  <div class="banner-content">
+    <p class="breadcrumb" id="breadcrumb"></p>
+    <h1 id="banner-title"></h1>
+    <p class="banner-sub" id="banner-sub"></p>
+  </div>
+</div>
+
+<!-- CITTÀ — popolato da JS -->
+<section class="section" style="background:var(--white);">
+  <div class="section-inner">
+    <p class="section-tag" id="section-tag"></p>
+    <h2 class="section-title" id="section-title"></h2>
+    <p class="section-lead" id="section-lead"></p>
+    <div class="divider"></div>
+    <div class="card-grid" id="card-grid"></div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo">🌍 Due Nissi</div>
+      <p>Due appassionati viaggiatori che condividono esperienze autentiche, guide reali e itinerari testati in tutto il mondo.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Naviga</h5>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="chi-siamo.html">Chi Siamo</a></li>
+        <li><a href="index.html#continents">Continenti</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Legale</h5>
+      <ul>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Cookie Policy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© Due Nissi — Tutti i diritti riservati</span>
+    <div class="footer-bottom-links"><a href="#">Privacy</a><a href="#">Cookie</a></div>
+  </div>
+</footer>
+
+<script src="js/app.js"></script>
+<script>
+(async () => {
+  // ?c=europe&co=italy
+  const params = new URLSearchParams(location.search);
+  const continentId = params.get('c');
+  const countryId   = params.get('co');
+  if (!continentId || !countryId) return;
+
+  // Carica continent.json per il nome del continente (breadcrumb)
+  const [resCont, resCountry] = await Promise.all([
+    fetch(`content/${continentId}/continent.json`),
+    fetch(`content/${continentId}/${countryId}/country.json`)
+  ]);
+  if (!resCont.ok || !resCountry.ok) return;
+
+  const continent = await resCont.json();
+  const data      = await resCountry.json();
+
+  // Meta
+  document.title = `${data.name} — Due Nissi`;
+  document.querySelector('meta[name="description"]').content =
+    `La nostra guida a ${data.name}: città, monumenti e ristoranti testati dai Due Nissi.`;
+
+  // Banner
+  const banner = document.getElementById('banner');
+  if (data.banner_image) {
+    banner.style.backgroundImage = `url('${data.banner_image}')`;
+    banner.style.backgroundSize = 'cover';
+    banner.style.backgroundPosition = data.banner_position || 'center';
+  }
+  document.getElementById('banner-title').textContent = data.name;
+  document.getElementById('banner-sub').textContent   = data.subtitle;
+
+  // Breadcrumb
+  document.getElementById('breadcrumb').innerHTML =
+    `<a href="index.html">Home</a> › <a href="continent.html?c=${continentId}">${continent.name}</a>`;
+
+  // Sezione
+  document.getElementById('section-tag').textContent   = data.section_tag;
+  document.getElementById('section-title').textContent = data.section_title;
+  document.getElementById('section-lead').textContent  = data.section_lead;
+
+  // Card città
+  const grid = document.getElementById('card-grid');
+  data.cities.forEach(city => {
+    const thumb = city.image
+      ? `style="background-image:url('${city.image}'); background-size:cover; background-position:center;"`
+      : `style="background:#1a2a3a;"`;
+
+    const cta = city.active
+      ? `<a href="city.html?c=${continentId}&co=${countryId}&ci=${city.id}" class="btn btn-primary">Scopri</a>`
+      : `<span class="btn btn-outline" style="cursor:default;opacity:.6;">In arrivo</span>`;
+
+    const opacity = city.active ? '' : 'style="opacity:.55;pointer-events:none;"';
+
+    grid.insertAdjacentHTML('beforeend', `
+      <div class="place-card" ${opacity}>
+        <div class="place-card-thumb" ${thumb}>
+          <div class="thumb-glow"></div>
+          ${!city.image ? `<span style="font-size:2.5rem;position:relative;z-index:1;">${city.emoji}</span>` : ''}
+        </div>
+        <div class="place-card-body">
+          <h3>${city.name}</h3>
+          <p>${city.description}</p>
+          ${cta}
+        </div>
+      </div>
+    `);
+  });
+})();
+</script>
+</body>
+</html>
