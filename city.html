@@ -145,6 +145,12 @@ function itinerarySection(sec) {
     </section>`;
 }
 
+
+function introSection(sec){return `<section class="section city-intro"><div class="section-inner"><h2 class="section-title">${sec.title||''}</h2><p class="section-lead">${sec.text||''}</p></div></section>`;}
+function overviewSection(sec){return `<section class="section"><div class="section-inner"><h2 class="section-title">${sec.title||'Overview itinerario'}</h2><div class="overview-timeline">${(sec.days||[]).map(d=>`<div class='overview-day'><h3>Giorno ${d.day}</h3>${(d.stops||[]).map(s=>`<div class='overview-stop'>● ${s.name}${s.distance?`<div class='overview-connector'>↓ ${s.distance} • ${s.duration||''}</div>`:''}</div>`).join('')}</div>`).join('')}</div></div></section>`;}
+function mapsSection(sec){return `<section class="section"><div class="section-inner"><h2 class="section-title">Mappe</h2>${(sec.days||[]).map(d=>`<div class='day-map'><h3>Giorno ${d.day}</h3>${d.embed_url?`<iframe src='${d.embed_url}' loading='lazy'></iframe>`:''}${d.maps_url?`<p><a target='_blank' href='${d.maps_url}'>Apri percorso completo su Google Maps</a></p>`:''}</div>`).join('')}</div></section>`;}
+function sleepSection(sec){return `<section class="section"><div class="section-inner"><h2 class="section-title">${sec.title||'Dove Dormire'}</h2>${(sec.items||[]).map(i=>`<div class='hotel-card'><h3>${i.name}</h3><p>${i.description||''}</p></div>`).join('')}</div></section>`;}
+
 /* ===== Main ===== */
 (async () => {
   const params      = new URLSearchParams(location.search);
@@ -193,6 +199,10 @@ function itinerarySection(sec) {
     data.sections.forEach((sec, idx) => {
       if (sec.type === 'poi')        container.insertAdjacentHTML('beforeend', poiSection(sec, idx));
       if (sec.type === 'itinerary')  container.insertAdjacentHTML('beforeend', itinerarySection(sec));
+      if (sec.type === 'intro') container.insertAdjacentHTML('beforeend', introSection(sec));
+      if (sec.type === 'overview') container.insertAdjacentHTML('beforeend', overviewSection(sec));
+      if (sec.type === 'maps') container.insertAdjacentHTML('beforeend', mapsSection(sec));
+      if (sec.type === 'sleep') container.insertAdjacentHTML('beforeend', sleepSection(sec));
     });
     // Riattiva expand dopo render dinamico
     document.querySelectorAll('.poi-expand').forEach(btn => {
