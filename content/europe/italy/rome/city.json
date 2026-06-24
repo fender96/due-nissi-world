@@ -8,6 +8,71 @@
   "banner_position": "center 40%",
   "sections": [
     {
+      "type": "intro",
+      "title": "Roma in 3 giorni",
+      "text": "Roma è una città che richiede tempo, ma con un itinerario ben costruito si possono vedere i luoghi più iconici senza correre. Questa guida segue il percorso che faremmo oggi, ottimizzando gli spostamenti a piedi e alternando monumenti, quartieri autentici e soste gastronomiche. Tutte le tappe sono state selezionate per offrire il miglior equilibrio tra storia, atmosfera e praticità."
+    },
+    {
+      "type": "overview",
+      "title": "Overview itinerario",
+      "days": [
+        {
+          "day": 1,
+          "stops": [
+            {
+              "name": "Colosseo"
+            },
+            {
+              "name": "Foro Romano",
+              "distance": "0.8 km",
+              "duration": "10 min"
+            },
+            {
+              "name": "Pantheon",
+              "distance": "1.5 km",
+              "duration": "20 min"
+            },
+            {
+              "name": "Fontana di Trevi",
+              "distance": "0.7 km",
+              "duration": "8 min"
+            }
+          ]
+        },
+        {
+          "day": 2,
+          "stops": [
+            {
+              "name": "Musei Vaticani"
+            },
+            {
+              "name": "Basilica di San Pietro",
+              "distance": "0.3 km",
+              "duration": "5 min"
+            },
+            {
+              "name": "Castel Sant'Angelo",
+              "distance": "1 km",
+              "duration": "12 min"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "maps",
+      "days": [
+        {
+          "day": 1,
+          "maps_url": "https://maps.google.com/?q=Colosseo,Roma"
+        },
+        {
+          "day": 2,
+          "maps_url": "https://maps.google.com/?q=Musei+Vaticani,Roma"
+        }
+      ]
+    },
+    {
       "type": "poi",
       "tag": "cosa vedere",
       "title": "Monumenti",
@@ -120,6 +185,20 @@
           "time": "20:00",
           "title": "Cena a Trastevere",
           "description": "Da Enzo al 29 o qualsiasi trattoria senza menu plastificato in vetrina."
+        }
+      ]
+    },
+    {
+      "type": "sleep",
+      "title": "Dove Dormire",
+      "items": [
+        {
+          "name": "Hotel Artemide",
+          "description": "Ottima posizione vicino a Termini, ideale per visitare il centro a piedi."
+        },
+        {
+          "name": "The Liberty Boutique Hotel",
+          "description": "Struttura elegante con ottimo rapporto qualità-prezzo."
         }
       ]
     }
