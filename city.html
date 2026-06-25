@@ -148,16 +148,14 @@ function itinerarySection(sec) {
 
 function introSection(sec){return `<section class="section city-intro"><div class="section-inner"><h2 class="section-title">${sec.title||''}</h2><p class="section-lead">${sec.text||''}</p></div></section>`;}
 function overviewSection(sec, mapsData) {
-  // Build a lookup: day number -> {embed_url, maps_url, tip}
   const mapsLookup = {};
   if (mapsData) {
     (mapsData.days || []).forEach(md => { mapsLookup[md.day] = md; });
   }
 
-  const daysHtml = (sec.days || []).map(d => {
+  const dayBlocks = (sec.days || []).map((d, dayIdx) => {
     const md = mapsLookup[d.day] || {};
 
-    // Stops (left column)
     const stopsHtml = (d.stops || []).map((s, i) => {
       const isLast = i === d.stops.length - 1;
       const mapsPin = s.maps_url
@@ -167,11 +165,17 @@ function overviewSection(sec, mapsData) {
           <span class="stop-meta-item"><span class="stop-meta-icon">🚶</span>${s.distance}</span>
           ${s.duration ? `<span class="stop-meta-item"><span class="stop-meta-icon">⏱</span>${s.duration}</span>` : ''}
         </div>` : '';
+      const connector = !isLast ? `
+        <div class="stop-connector">
+          <div class="stop-connector-line"></div>
+          <div class="stop-connector-arrow">↓</div>
+          <div class="stop-connector-line"></div>
+        </div>` : '';
       return `
         <div class="stop-row">
           <div class="stop-dot-col">
             <div class="stop-dot">${i + 1}</div>
-            ${!isLast ? '<div class="stop-connector"></div>' : ''}
+            ${connector}
           </div>
           <div class="stop-body">
             <span class="stop-name">${s.name}</span>${mapsPin}
@@ -180,7 +184,6 @@ function overviewSection(sec, mapsData) {
         </div>`;
     }).join('');
 
-    // Map (right column)
     const mapHtml = md.embed_url
       ? `<iframe class="day-map-embed" src="${md.embed_url}" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>`
       : `<div class="day-map-placeholder"><span>🗺️</span><p>Mappa non disponibile</p></div>`;
@@ -188,24 +191,12 @@ function overviewSection(sec, mapsData) {
     const openMapsBtn = md.maps_url
       ? `<a class="day-open-maps" href="${md.maps_url}" target="_blank" rel="noopener">Apri in Google Maps ↗</a>` : '';
 
-    // Tip box
-    const tipHtml = md.tip ? `
-      <div class="nissi-tip-box">
-        <div class="nissi-tip-icon">💡</div>
-        <div class="nissi-tip-body">
-          <h5>Consiglio dei Nissi</h5>
-          <p>${md.tip}</p>
-        </div>
-      </div>` : '';
-
-    return `
-      <div class="overview-day-block">
+    return `<div class="overview-day-block">
         <div class="day-left">
           <div class="day-badge"><div class="day-badge-inner"><span class="day-badge-label">Giorno</span><span class="day-badge-num">${d.day}</span></div></div>
           ${d.title ? `<div class="day-title">${d.title}</div>` : ''}
           ${d.subtitle ? `<div class="day-subtitle">${d.subtitle}</div>` : ''}
           <div class="stops-list">${stopsHtml}</div>
-          ${tipHtml}
         </div>
         <div class="day-right">
           <div class="day-map-header">
@@ -215,7 +206,17 @@ function overviewSection(sec, mapsData) {
           ${mapHtml}
         </div>
       </div>`;
-  }).join('');
+  });
+
+  // Interleave day-blocks with inter-day connectors
+  const days = sec.days || [];
+  let daysHtml = '';
+  dayBlocks.forEach((block, i) => {
+    daysHtml += block;
+    if (i < dayBlocks.length - 1) {
+      daysHtml += `<div class="day-inter-connector"><div class="day-inter-arrow">↓</div></div>`;
+    }
+  });
 
   return `
     <section class="overview-section">
@@ -231,6 +232,73 @@ function overviewSection(sec, mapsData) {
         <div class="overview-days">${daysHtml}</div>
       </div>
     </section>`;
+}
+
+function narrativePoiSection(sec, secIdx) {
+  // Group items by day field; if no day, all go to day 0 (no day marker)
+  // Items are rendered alternating text-left/image-right
+  const hasDays = sec.items && sec.items.some(it => it.day);
+
+  if (hasDays) {
+    // Group by day
+    const byDay = {};
+    sec.items.forEach(it => {
+      const d = it.day || 0;
+      if (!byDay[d]) byDay[d] = [];
+      byDay[d].push(it);
+    });
+    const dayGroups = Object.entries(byDay).map(([day, items]) => {
+      const entriesHtml = items.map((item, i) => buildNarrativeEntry(item, i)).join('');
+      return `
+        <div class="narrative-day-marker">
+          <div class="narrative-day-badge"><span class="nb-label">Giorno</span><span class="nb-num">${day}</span></div>
+          ${item.day_title ? `<h3 class="narrative-day-title">${item.day_title}</h3>` : ''}
+          <div class="narrative-day-line"></div>
+        </div>
+        <div class="narrative-entries">${entriesHtml}</div>`;
+    }).join('');
+    return `<section class="narrative-section"><div class="narrative-inner">
+      <p class="section-tag">${sec.tag || ''}</p>
+      <h2 class="section-title" style="color:var(--navy);margin-bottom:1.2rem;">${sec.title || ''}</h2>
+      <div class="divider"></div>
+      ${dayGroups}
+    </div></section>`;
+  }
+
+  // No day grouping — single block with tag+title then entries
+  const entriesHtml = (sec.items || []).map((item, i) => buildNarrativeEntry(item, i)).join('');
+  return `<section class="narrative-section"><div class="narrative-inner">
+    <p class="section-tag">${sec.tag || ''}</p>
+    <h2 class="section-title" style="color:var(--navy);margin-bottom:1.2rem;">${sec.title || ''}</h2>
+    <div class="divider"></div>
+    <div class="narrative-entries">${entriesHtml}</div>
+  </div></section>`;
+}
+
+function buildNarrativeEntry(item, i) {
+  const isReverse = i % 2 === 1;
+  const bookBtn    = item.book_url    ? `<a href="${item.book_url}" target="_blank" rel="noopener" class="btn btn-book">🏟 Prenota</a>` : '';
+  const websiteBtn = item.website_url ? `<a href="${item.website_url}" target="_blank" rel="noopener" class="btn btn-website">🌐 Sito ufficiale</a>` : '';
+  const mapsBtn    = item.maps_url    ? `<a href="${item.maps_url}" target="_blank" rel="noopener" class="btn btn-maps">📍 Google Maps</a>` : '';
+  const tip = item.tip ? `<div class="poi-tip"><span>💡</span><span>${item.tip}</span></div>` : '';
+  const rating = item.rating ? `<span class="badge badge-rating">⭐ ${item.rating} / 10</span>` : '';
+  const imgHtml = item.image
+    ? `<img src="${item.image}" alt="${item.name}" loading="lazy">`
+    : `<div class="narrative-img-placeholder"><span>${item.emoji || '🏙️'}</span><p>Foto in arrivo</p></div>`;
+  return `
+    <div class="narrative-entry${isReverse ? ' reverse' : ''}">
+      <div class="narrative-text">
+        <div class="narrative-badges">
+          <span class="badge badge-tested">🏅 Testato dai Nissi</span>
+          ${rating}
+        </div>
+        <h3>${item.name}</h3>
+        ${tip}
+        <p>${item.description || ''}</p>
+        <div class="poi-card-foot">${mapsBtn}${bookBtn}${websiteBtn}</div>
+      </div>
+      <div class="narrative-img">${imgHtml}</div>
+    </div>`;
 }
 function mapsSection(sec){return `<section class="section"><div class="section-inner"><h2 class="section-title">Mappe</h2>${(sec.days||[]).map(d=>`<div class='day-map'><h3>Giorno ${d.day}</h3>${d.embed_url?`<iframe src='${d.embed_url}' loading='lazy'></iframe>`:''}${d.maps_url?`<p><a target='_blank' href='${d.maps_url}'>Apri percorso completo su Google Maps</a></p>`:''}</div>`).join('')}</div></section>`;}
 function sleepSection(sec){return `<section class="section"><div class="section-inner"><h2 class="section-title">${sec.title||'Dove Dormire'}</h2>${(sec.items||[]).map(i=>`<div class='hotel-card'><h3>${i.name}</h3><p>${i.description||''}</p></div>`).join('')}</div></section>`;}
@@ -284,7 +352,7 @@ function sleepSection(sec){return `<section class="section"><div class="section-
     const mapsSec = data.sections.find(s => s.type === 'maps');
 
     data.sections.forEach((sec, idx) => {
-      if (sec.type === 'poi')        container.insertAdjacentHTML('beforeend', poiSection(sec, idx));
+      if (sec.type === 'poi')        container.insertAdjacentHTML('beforeend', narrativePoiSection(sec, idx));
       if (sec.type === 'itinerary')  container.insertAdjacentHTML('beforeend', itinerarySection(sec));
       if (sec.type === 'intro')      container.insertAdjacentHTML('beforeend', introSection(sec));
       if (sec.type === 'overview')   container.insertAdjacentHTML('beforeend', overviewSection(sec, mapsSec));
