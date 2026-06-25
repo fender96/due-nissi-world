@@ -89,8 +89,8 @@
     },
     {
       "type": "poi",
-      "tag": "cosa vedere",
-      "title": "Monumenti",
+      "tag": "il nostro racconto",
+      "title": "Il nostro viaggio",
       "background": "cream",
       "items": [
         {
@@ -135,8 +135,8 @@
     },
     {
       "type": "poi",
-      "tag": "cosa fare",
-      "title": "Attività",
+      "tag": "da non perdere",
+      "title": "Ulteriori attività da provare",
       "background": "white",
       "items": [
         {
@@ -153,7 +153,7 @@
     {
       "type": "poi",
       "tag": "dove mangiare",
-      "title": "Ristoranti",
+      "title": "Altri ristoranti da provare",
       "background": "cream",
       "items": [
         {

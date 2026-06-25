@@ -146,7 +146,14 @@ function itinerarySection(sec) {
 }
 
 
-function introSection(sec){return `<section class="section city-intro"><div class="section-inner"><h2 class="section-title">${sec.title||''}</h2><p class="section-lead">${sec.text||''}</p></div></section>`;}
+function introSection(sec) {
+  return `<section class="city-intro-section">
+    <div class="city-intro-inner">
+      <h2 class="city-intro-title">${sec.title || ''}</h2>
+      <p class="city-intro-text">${sec.text || ''}</p>
+    </div>
+  </section>`;
+}
 function overviewSection(sec, mapsData) {
   const mapsLookup = {};
   if (mapsData) {
@@ -235,67 +242,73 @@ function overviewSection(sec, mapsData) {
 }
 
 function narrativePoiSection(sec, secIdx) {
-  // Group items by day field; if no day, all go to day 0 (no day marker)
-  // Items are rendered alternating text-left/image-right
-  const hasDays = sec.items && sec.items.some(it => it.day);
+  // Determine if this is the main "journey" section (type narrative) or an extra poi section
+  const isJourney = sec.type === 'narrative';
+  const sectionTitle = isJourney ? (sec.title || 'Il nostro viaggio') : sec.title;
+  const sectionTag   = sec.tag || '';
+
+  // Group items by day if any have a day field
+  const hasDays = sec.items && sec.items.some(it => it.day != null);
+  let bodyHtml = '';
 
   if (hasDays) {
-    // Group by day
     const byDay = {};
+    const dayTitles = {};
     sec.items.forEach(it => {
-      const d = it.day || 0;
-      if (!byDay[d]) byDay[d] = [];
+      const d = it.day != null ? it.day : 0;
+      if (!byDay[d]) { byDay[d] = []; dayTitles[d] = it.day_title || ''; }
       byDay[d].push(it);
     });
-    const dayGroups = Object.entries(byDay).map(([day, items]) => {
-      const entriesHtml = items.map((item, i) => buildNarrativeEntry(item, i)).join('');
+    // Sort days numerically
+    const sortedDays = Object.keys(byDay).sort((a,b) => Number(a)-Number(b));
+    let globalIdx = 0;
+    bodyHtml = sortedDays.map(day => {
+      const items = byDay[day];
+      const entriesHtml = items.map(item => buildNarrativeEntry(item, globalIdx++)).join('');
+      const dtitle = dayTitles[day];
       return `
         <div class="narrative-day-marker">
           <div class="narrative-day-badge"><span class="nb-label">Giorno</span><span class="nb-num">${day}</span></div>
-          ${item.day_title ? `<h3 class="narrative-day-title">${item.day_title}</h3>` : ''}
+          ${dtitle ? `<h3 class="narrative-day-title">${dtitle}</h3>` : ''}
           <div class="narrative-day-line"></div>
         </div>
         <div class="narrative-entries">${entriesHtml}</div>`;
     }).join('');
-    return `<section class="narrative-section"><div class="narrative-inner">
-      <p class="section-tag">${sec.tag || ''}</p>
-      <h2 class="section-title" style="color:var(--navy);margin-bottom:1.2rem;">${sec.title || ''}</h2>
-      <div class="divider"></div>
-      ${dayGroups}
-    </div></section>`;
+  } else {
+    const entriesHtml = (sec.items || []).map((item, i) => buildNarrativeEntry(item, i)).join('');
+    bodyHtml = `<div class="narrative-entries">${entriesHtml}</div>`;
   }
 
-  // No day grouping — single block with tag+title then entries
-  const entriesHtml = (sec.items || []).map((item, i) => buildNarrativeEntry(item, i)).join('');
   return `<section class="narrative-section"><div class="narrative-inner">
-    <p class="section-tag">${sec.tag || ''}</p>
-    <h2 class="section-title" style="color:var(--navy);margin-bottom:1.2rem;">${sec.title || ''}</h2>
+    <p class="section-tag">${sectionTag}</p>
+    <h2 class="section-title" style="color:var(--navy);margin-bottom:1.2rem;">${sectionTitle}</h2>
     <div class="divider"></div>
-    <div class="narrative-entries">${entriesHtml}</div>
+    ${bodyHtml}
   </div></section>`;
 }
 
-function buildNarrativeEntry(item, i) {
-  const isReverse = i % 2 === 1;
-  const bookBtn    = item.book_url    ? `<a href="${item.book_url}" target="_blank" rel="noopener" class="btn btn-book">🏟 Prenota</a>` : '';
-  const websiteBtn = item.website_url ? `<a href="${item.website_url}" target="_blank" rel="noopener" class="btn btn-website">🌐 Sito ufficiale</a>` : '';
-  const mapsBtn    = item.maps_url    ? `<a href="${item.maps_url}" target="_blank" rel="noopener" class="btn btn-maps">📍 Google Maps</a>` : '';
-  const tip = item.tip ? `<div class="poi-tip"><span>💡</span><span>${item.tip}</span></div>` : '';
-  const rating = item.rating ? `<span class="badge badge-rating">⭐ ${item.rating} / 10</span>` : '';
+function buildNarrativeEntry(item, globalIdx) {
+  // Even idx: text left + img right; odd: img left + text right
+  const isReverse = globalIdx % 2 === 1;
+
+  // Inline links embedded after the description text
+  const inlineLinks = [];
+  if (item.maps_url)    inlineLinks.push(`<a href="${item.maps_url}" target="_blank" rel="noopener" class="inline-link">📍 Google Maps</a>`);
+  if (item.book_url)    inlineLinks.push(`<a href="${item.book_url}" target="_blank" rel="noopener" class="inline-link">🎟 Prenota</a>`);
+  if (item.website_url) inlineLinks.push(`<a href="${item.website_url}" target="_blank" rel="noopener" class="inline-link">🌐 Sito ufficiale</a>`);
+  const linksHtml = inlineLinks.length
+    ? `<span class="inline-links-group">[${inlineLinks.join(' · ')}]</span>`
+    : '';
+
   const imgHtml = item.image
     ? `<img src="${item.image}" alt="${item.name}" loading="lazy">`
     : `<div class="narrative-img-placeholder"><span>${item.emoji || '🏙️'}</span><p>Foto in arrivo</p></div>`;
+
   return `
     <div class="narrative-entry${isReverse ? ' reverse' : ''}">
       <div class="narrative-text">
-        <div class="narrative-badges">
-          <span class="badge badge-tested">🏅 Testato dai Nissi</span>
-          ${rating}
-        </div>
         <h3>${item.name}</h3>
-        ${tip}
-        <p>${item.description || ''}</p>
-        <div class="poi-card-foot">${mapsBtn}${bookBtn}${websiteBtn}</div>
+        <p class="narrative-desc">${item.description || ''} ${linksHtml}</p>
       </div>
       <div class="narrative-img">${imgHtml}</div>
     </div>`;
