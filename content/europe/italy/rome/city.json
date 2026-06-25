@@ -14,46 +14,57 @@
     },
     {
       "type": "overview",
-      "title": "Overview itinerario",
+      "title": "Il percorso giorno per giorno",
       "days": [
         {
           "day": 1,
+          "title": "Roma Antica & Centro Storico",
+          "subtitle": "Un mix perfetto tra storia millenaria e meraviglie del centro storico.",
           "stops": [
             {
-              "name": "Colosseo"
+              "name": "Colosseo",
+              "maps_url": "https://maps.google.com/?q=Colosseo,Roma"
             },
             {
               "name": "Foro Romano",
               "distance": "0.8 km",
-              "duration": "10 min"
+              "duration": "10 min",
+              "maps_url": "https://maps.google.com/?q=Foro+Romano,Roma"
             },
             {
               "name": "Pantheon",
               "distance": "1.5 km",
-              "duration": "20 min"
+              "duration": "20 min",
+              "maps_url": "https://maps.google.com/?q=Pantheon,Roma"
             },
             {
               "name": "Fontana di Trevi",
               "distance": "0.7 km",
-              "duration": "8 min"
+              "duration": "8 min",
+              "maps_url": "https://maps.google.com/?q=Fontana+di+Trevi,Roma"
             }
           ]
         },
         {
           "day": 2,
+          "title": "Vaticano & Castel Sant'Angelo",
+          "subtitle": "Arte, spiritualità e panorami mozzafiato lungo il Tevere.",
           "stops": [
             {
-              "name": "Musei Vaticani"
+              "name": "Musei Vaticani",
+              "maps_url": "https://maps.google.com/?q=Musei+Vaticani,Roma"
             },
             {
               "name": "Basilica di San Pietro",
               "distance": "0.3 km",
-              "duration": "5 min"
+              "duration": "5 min",
+              "maps_url": "https://maps.google.com/?q=Basilica+San+Pietro,Roma"
             },
             {
               "name": "Castel Sant'Angelo",
               "distance": "1 km",
-              "duration": "12 min"
+              "duration": "12 min",
+              "maps_url": "https://maps.google.com/?q=Castel+Sant+Angelo,Roma"
             }
           ]
         }
@@ -64,11 +75,15 @@
       "days": [
         {
           "day": 1,
-          "maps_url": "https://maps.google.com/?q=Colosseo,Roma"
+          "embed_url": "https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d5944.8!2d12.4922!3d41.8946!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e2!4m3!3m2!1d41.8902!2d12.4923!4m3!3m2!1d41.8924!2d12.4853!4m3!3m2!1d41.8986!2d12.4769!5e0!3m2!1sit!2sit!4v1700000001",
+          "maps_url": "https://maps.google.com/maps/dir/Colosseo,Roma/Foro+Romano,Roma/Pantheon,Roma/Fontana+di+Trevi,Roma",
+          "tip": "Parti presto al mattino per goderti i monumenti con meno folla e temperature più piacevoli."
         },
         {
           "day": 2,
-          "maps_url": "https://maps.google.com/?q=Musei+Vaticani,Roma"
+          "embed_url": "https://www.google.com/maps/embed?pb=!1m24!1m12!1m3!1d5944.2!2d12.4534!3d41.9029!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m9!3e2!4m3!3m2!1d41.9065!2d12.4536!4m3!3m2!1d41.9022!2d12.4534!5e0!3m2!1sit!2sit!4v1700000002",
+          "maps_url": "https://maps.google.com/maps/dir/Musei+Vaticani,Roma/Basilica+San+Pietro,Roma/Castel+Sant+Angelo,Roma",
+          "tip": "Prenota i Musei Vaticani con almeno una settimana di anticipo, soprattutto in alta stagione."
         }
       ]
     },

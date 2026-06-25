@@ -147,7 +147,91 @@ function itinerarySection(sec) {
 
 
 function introSection(sec){return `<section class="section city-intro"><div class="section-inner"><h2 class="section-title">${sec.title||''}</h2><p class="section-lead">${sec.text||''}</p></div></section>`;}
-function overviewSection(sec){return `<section class="section"><div class="section-inner"><h2 class="section-title">${sec.title||'Overview itinerario'}</h2><div class="overview-timeline">${(sec.days||[]).map(d=>`<div class='overview-day'><h3>Giorno ${d.day}</h3>${(d.stops||[]).map(s=>`<div class='overview-stop'>● ${s.name}${s.distance?`<div class='overview-connector'>↓ ${s.distance} • ${s.duration||''}</div>`:''}</div>`).join('')}</div>`).join('')}</div></div></section>`;}
+function overviewSection(sec, mapsData) {
+  // Build a lookup: day number -> {embed_url, maps_url, tip}
+  const mapsLookup = {};
+  if (mapsData) {
+    (mapsData.days || []).forEach(md => { mapsLookup[md.day] = md; });
+  }
+
+  const daysHtml = (sec.days || []).map(d => {
+    const md = mapsLookup[d.day] || {};
+
+    // Stops (left column)
+    const stopsHtml = (d.stops || []).map((s, i) => {
+      const isLast = i === d.stops.length - 1;
+      const mapsPin = s.maps_url
+        ? `<a class="stop-maps-link" href="${s.maps_url}" target="_blank" rel="noopener">📍</a>` : '';
+      const metaHtml = s.distance ? `
+        <div class="stop-meta">
+          <span class="stop-meta-item"><span class="stop-meta-icon">🚶</span>${s.distance}</span>
+          ${s.duration ? `<span class="stop-meta-item"><span class="stop-meta-icon">⏱</span>${s.duration}</span>` : ''}
+        </div>` : '';
+      return `
+        <div class="stop-row">
+          <div class="stop-dot-col">
+            <div class="stop-dot">${i + 1}</div>
+            ${!isLast ? '<div class="stop-connector"></div>' : ''}
+          </div>
+          <div class="stop-body">
+            <span class="stop-name">${s.name}</span>${mapsPin}
+            ${metaHtml}
+          </div>
+        </div>`;
+    }).join('');
+
+    // Map (right column)
+    const mapHtml = md.embed_url
+      ? `<iframe class="day-map-embed" src="${md.embed_url}" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>`
+      : `<div class="day-map-placeholder"><span>🗺️</span><p>Mappa non disponibile</p></div>`;
+
+    const openMapsBtn = md.maps_url
+      ? `<a class="day-open-maps" href="${md.maps_url}" target="_blank" rel="noopener">Apri in Google Maps ↗</a>` : '';
+
+    // Tip box
+    const tipHtml = md.tip ? `
+      <div class="nissi-tip-box">
+        <div class="nissi-tip-icon">💡</div>
+        <div class="nissi-tip-body">
+          <h5>Consiglio dei Nissi</h5>
+          <p>${md.tip}</p>
+        </div>
+      </div>` : '';
+
+    return `
+      <div class="overview-day-block">
+        <div class="day-left">
+          <div class="day-badge"><div class="day-badge-inner"><span class="day-badge-label">Giorno</span><span class="day-badge-num">${d.day}</span></div></div>
+          ${d.title ? `<div class="day-title">${d.title}</div>` : ''}
+          ${d.subtitle ? `<div class="day-subtitle">${d.subtitle}</div>` : ''}
+          <div class="stops-list">${stopsHtml}</div>
+          ${tipHtml}
+        </div>
+        <div class="day-right">
+          <div class="day-map-header">
+            <div class="day-map-title"><span class="day-map-title-icon">🗺️</span>Mappa del percorso — Giorno ${d.day}</div>
+            ${openMapsBtn}
+          </div>
+          ${mapHtml}
+        </div>
+      </div>`;
+  }).join('');
+
+  return `
+    <section class="overview-section">
+      <div class="overview-inner">
+        <p class="section-tag">Overview itinerario</p>
+        <h2 class="section-title">${sec.title || 'Il percorso giorno per giorno'}</h2>
+        <div class="divider"></div>
+        <div class="overview-legend">
+          <div class="legend-item"><div class="legend-dot"></div>Punto di interesse</div>
+          <div class="legend-item"><div class="legend-dash"><span></span><span></span><span></span><span></span><span></span></div>A piedi</div>
+          <div class="legend-item"><span class="legend-pin">📍</span>Maps</div>
+        </div>
+        <div class="overview-days">${daysHtml}</div>
+      </div>
+    </section>`;
+}
 function mapsSection(sec){return `<section class="section"><div class="section-inner"><h2 class="section-title">Mappe</h2>${(sec.days||[]).map(d=>`<div class='day-map'><h3>Giorno ${d.day}</h3>${d.embed_url?`<iframe src='${d.embed_url}' loading='lazy'></iframe>`:''}${d.maps_url?`<p><a target='_blank' href='${d.maps_url}'>Apri percorso completo su Google Maps</a></p>`:''}</div>`).join('')}</div></section>`;}
 function sleepSection(sec){return `<section class="section"><div class="section-inner"><h2 class="section-title">${sec.title||'Dove Dormire'}</h2>${(sec.items||[]).map(i=>`<div class='hotel-card'><h3>${i.name}</h3><p>${i.description||''}</p></div>`).join('')}</div></section>`;}
 
@@ -196,13 +280,16 @@ function sleepSection(sec){return `<section class="section"><div class="section-
   if (!data.sections || data.sections.length === 0) {
     document.getElementById('empty-state').style.display = '';
   } else {
+    // Pre-fetch maps section so overview can merge it
+    const mapsSec = data.sections.find(s => s.type === 'maps');
+
     data.sections.forEach((sec, idx) => {
       if (sec.type === 'poi')        container.insertAdjacentHTML('beforeend', poiSection(sec, idx));
       if (sec.type === 'itinerary')  container.insertAdjacentHTML('beforeend', itinerarySection(sec));
-      if (sec.type === 'intro') container.insertAdjacentHTML('beforeend', introSection(sec));
-      if (sec.type === 'overview') container.insertAdjacentHTML('beforeend', overviewSection(sec));
-      if (sec.type === 'maps') container.insertAdjacentHTML('beforeend', mapsSection(sec));
-      if (sec.type === 'sleep') container.insertAdjacentHTML('beforeend', sleepSection(sec));
+      if (sec.type === 'intro')      container.insertAdjacentHTML('beforeend', introSection(sec));
+      if (sec.type === 'overview')   container.insertAdjacentHTML('beforeend', overviewSection(sec, mapsSec));
+      if (sec.type === 'maps')       { /* merged into overview — skip standalone render */ }
+      if (sec.type === 'sleep')      container.insertAdjacentHTML('beforeend', sleepSection(sec));
     });
     // Riattiva expand dopo render dinamico
     document.querySelectorAll('.poi-expand').forEach(btn => {
