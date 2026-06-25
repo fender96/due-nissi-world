@@ -455,7 +455,7 @@ footer {
   background: var(--white);
 }
 .city-intro-inner {
-  max-width: 100%;
+  width: 100%;
   padding: 0 2.5rem;
 }
 .city-intro-title {
@@ -469,6 +469,56 @@ footer {
   color: var(--muted);
   line-height: 1.8;
   max-width: 820px;
+}
+
+/* ===== PAGE ANCHORS / SEGNALIBRI ===== */
+.page-anchors-section {
+  background: var(--white);
+  border-bottom: 1px solid rgba(13,27,42,.08);
+  padding: 0;
+  position: sticky;
+  top: 64px;
+  z-index: 900;
+  box-shadow: 0 2px 12px rgba(13,27,42,.07);
+}
+.page-anchors-inner {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  width: 100%;
+  padding: 0 2rem;
+}
+.page-anchors-inner::-webkit-scrollbar { display: none; }
+.page-anchor-link {
+  display: flex;
+  align-items: center;
+  gap: .45rem;
+  padding: .9rem 1.2rem;
+  font-size: .75rem;
+  font-weight: 600;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  color: var(--muted);
+  white-space: nowrap;
+  border-bottom: 2px solid transparent;
+  transition: color .2s, border-color .2s;
+  text-decoration: none;
+}
+.page-anchor-link:hover,
+.page-anchor-link.active {
+  color: var(--burnt);
+  border-bottom-color: var(--burnt);
+}
+.page-anchor-icon { font-size: .9rem; }
+.page-anchor-sep {
+  width: 1px;
+  height: 18px;
+  background: rgba(13,27,42,.1);
+  flex-shrink: 0;
+  margin: 0 .2rem;
 }
 
 /* ===== OVERVIEW ITINERARY V4.4 ===== */
@@ -524,7 +574,7 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: .6rem 0;
+  padding: .5rem 0;
   position: relative;
 }
 .day-inter-connector::before {
@@ -532,21 +582,66 @@ footer {
   position: absolute;
   left: 50%;
   top: 0; bottom: 0;
-  width: 2px;
-  border-left: 2px dashed rgba(196,98,45,.35);
+  width: 0;
+  border-left: 2px dashed rgba(196,98,45,.3);
   transform: translateX(-50%);
 }
 .day-inter-arrow {
-  width: 28px; height: 28px;
+  width: 32px; height: 32px;
   background: var(--white);
   border: 2px solid var(--burnt);
   border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
-  font-size: .85rem;
-  color: var(--burnt);
   position: relative;
   z-index: 1;
-  box-shadow: 0 2px 8px rgba(196,98,45,.2);
+  box-shadow: 0 2px 10px rgba(196,98,45,.18);
+  flex-shrink: 0;
+}
+/* SVG chevron arrow — modern and clean */
+.day-inter-arrow svg {
+  width: 14px; height: 14px;
+  stroke: var(--burnt);
+  stroke-width: 2.5;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Transport options between stops */
+.stop-transport {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin: 3px 0 4px;
+  padding-left: 2px;
+}
+.transport-option {
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+  font-size: .7rem;
+  color: var(--muted);
+  line-height: 1.2;
+}
+.transport-icon {
+  font-size: .78rem;
+  flex-shrink: 0;
+  width: 16px;
+  text-align: center;
+}
+.transport-detail {
+  display: flex;
+  gap: .3rem;
+  align-items: center;
+}
+.transport-dist {
+  font-weight: 600;
+  color: var(--navy);
+  opacity: .75;
+}
+.transport-time {
+  color: var(--muted);
+  opacity: .8;
 }
 
 .overview-day-block {
@@ -762,6 +857,66 @@ footer {
   padding: 1.4rem 1.6rem;
   border-radius: 12px;
   margin-bottom: 1rem;
+}
+
+/* ===== COME SPOSTARSI ===== */
+.transport-section {
+  padding: 4rem 0;
+  background: var(--navy);
+}
+.transport-inner {
+  width: 100%;
+  padding: 0 2.5rem;
+}
+.transport-section .section-tag  { color: var(--burnt); }
+.transport-section .section-title { color: var(--white); margin-bottom: 1.2rem; }
+.transport-section .divider       { background: var(--burnt); margin-bottom: 2rem; }
+.transport-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.2rem;
+  margin-bottom: 2rem;
+}
+.transport-card {
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 12px;
+  padding: 1.2rem 1.4rem;
+}
+.transport-card-header {
+  display: flex;
+  align-items: center;
+  gap: .7rem;
+  margin-bottom: .6rem;
+}
+.transport-card-icon {
+  font-size: 1.4rem;
+  flex-shrink: 0;
+}
+.transport-card-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  color: var(--sand);
+  margin: 0;
+}
+.transport-card-body {
+  font-size: .85rem;
+  color: rgba(232,213,176,.65);
+  line-height: 1.7;
+}
+.transport-card-body a {
+  color: var(--burnt);
+  font-weight: 600;
+  text-decoration: none;
+  transition: opacity .2s;
+}
+.transport-card-body a:hover { opacity: .75; }
+.transport-note {
+  font-size: .85rem;
+  color: rgba(232,213,176,.5);
+  line-height: 1.7;
+  font-style: italic;
+  max-width: 720px;
 }
 
 /* ===== NARRATIVE POI (tipo "diario") ===== */

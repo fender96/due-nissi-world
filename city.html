@@ -146,18 +146,79 @@ function itinerarySection(sec) {
 }
 
 
-function introSection(sec) {
-  return `<section class="city-intro-section">
-    <div class="city-intro-inner">
-      <h2 class="city-intro-title">${sec.title || ''}</h2>
-      <p class="city-intro-text">${sec.text || ''}</p>
-    </div>
-  </section>`;
+function introSection(sec, allSections) {
+  // Build anchor list from all sections (skip intro itself and maps)
+  const anchorDefs = {
+    'overview':  { icon: '🗺️', label: 'Itinerario' },
+    'transport': { icon: '🚌', label: 'Come spostarsi' },
+    'narrative': { icon: '✏️', label: 'Il nostro viaggio' },
+    'poi':       null, // handled per-tag below
+    'itinerary': { icon: '⏰', label: 'Giornata tipo' },
+    'sleep':     { icon: '🏨', label: 'Dove dormire' },
+  };
+  const poiTagIcons = {
+    'il nostro racconto': { icon: '✏️', label: 'Il nostro viaggio' },
+    'da non perdere':    { icon: '🏃', label: 'Attivit\u00e0' },
+    'dove mangiare':     { icon: '🍽️', label: 'Dove mangiare' },
+  };
+
+  const anchors = [];
+  (allSections || []).forEach((s, i) => {
+    let def = null;
+    if (s.type === 'poi') {
+      def = poiTagIcons[s.tag] || { icon: '📍', label: s.title || s.tag };
+    } else if (anchorDefs[s.type]) {
+      def = anchorDefs[s.type];
+      if (s.title) def = { ...def, label: s.title };
+    }
+    if (def) anchors.push({ id: `section-${s.type}-${i}`, icon: def.icon, label: def.label });
+  });
+
+  const linksHtml = anchors.map((a, i) => {
+    const sep = i < anchors.length - 1 ? '<div class="page-anchor-sep"></div>' : '';
+    return `<a href="#${a.id}" class="page-anchor-link"><span class="page-anchor-icon">${a.icon}</span>${a.label}</a>${sep}`;
+  }).join('');
+
+  return `<div class="page-anchors-section"><div class="page-anchors-inner">${linksHtml}</div></div>`;
 }
-function overviewSection(sec, mapsData) {
+function overviewSection(sec, mapsData, sectionId) {
   const mapsLookup = {};
   if (mapsData) {
     (mapsData.days || []).forEach(md => { mapsLookup[md.day] = md; });
+  }
+
+  const SVG_ARROW = `<svg viewBox="0 0 14 14"><polyline points="2,4 7,10 12,4"/></svg>`;
+
+  const TRANSPORT_ICONS = {
+    'walk':   '🚶',
+    'foot':   '🚶',
+    'car':    '🚗',
+    'drive':  '🚗',
+    'bus':    '🚌',
+    'metro':  '🚇',
+    'train':  '🚆',
+    'taxi':   '🚖',
+    'bike':   '🚴',
+    'tram':   '🚊',
+    'boat':   '⛵',
+    'ferry':  '⛵',
+  };
+
+  function buildTransport(s) {
+    // Support legacy single distance/duration AND new transports[] array
+    if (s.transports && s.transports.length) {
+      const rows = s.transports.map(t => {
+        const icon = TRANSPORT_ICONS[t.mode] || '🚶';
+        const dist = t.distance ? `<span class="transport-dist">${t.distance}</span>` : '';
+        const time = t.duration ? `<span class="transport-time">${t.duration}</span>` : '';
+        return `<div class="transport-option"><span class="transport-icon">${icon}</span><div class="transport-detail">${dist}${dist && time ? '<span style="opacity:.3">·</span>' : ''}${time}</div></div>`;
+      }).join('');
+      return `<div class="stop-transport">${rows}</div>`;
+    }
+    if (s.distance) {
+      return `<div class="stop-transport"><div class="transport-option"><span class="transport-icon">🚶</span><div class="transport-detail"><span class="transport-dist">${s.distance}</span>${s.duration ? `<span style="opacity:.3">·</span><span class="transport-time">${s.duration}</span>` : ''}</div></div></div>`;
+    }
+    return '';
   }
 
   const dayBlocks = (sec.days || []).map((d, dayIdx) => {
@@ -167,11 +228,7 @@ function overviewSection(sec, mapsData) {
       const isLast = i === d.stops.length - 1;
       const mapsPin = s.maps_url
         ? `<a class="stop-maps-link" href="${s.maps_url}" target="_blank" rel="noopener">📍</a>` : '';
-      const metaHtml = s.distance ? `
-        <div class="stop-meta">
-          <span class="stop-meta-item"><span class="stop-meta-icon">🚶</span>${s.distance}</span>
-          ${s.duration ? `<span class="stop-meta-item"><span class="stop-meta-icon">⏱</span>${s.duration}</span>` : ''}
-        </div>` : '';
+      const transportHtml = !isLast ? buildTransport(s) : '';
       const connector = !isLast ? `
         <div class="stop-connector">
           <div class="stop-connector-line"></div>
@@ -186,7 +243,7 @@ function overviewSection(sec, mapsData) {
           </div>
           <div class="stop-body">
             <span class="stop-name">${s.name}</span>${mapsPin}
-            ${metaHtml}
+            ${transportHtml}
           </div>
         </div>`;
     }).join('');
@@ -215,25 +272,23 @@ function overviewSection(sec, mapsData) {
       </div>`;
   });
 
-  // Interleave day-blocks with inter-day connectors
-  const days = sec.days || [];
   let daysHtml = '';
   dayBlocks.forEach((block, i) => {
     daysHtml += block;
     if (i < dayBlocks.length - 1) {
-      daysHtml += `<div class="day-inter-connector"><div class="day-inter-arrow">↓</div></div>`;
+      daysHtml += `<div class="day-inter-connector"><div class="day-inter-arrow">${SVG_ARROW}</div></div>`;
     }
   });
 
   return `
-    <section class="overview-section">
+    <section class="overview-section" id="${sectionId}">
       <div class="overview-inner">
         <p class="section-tag">Overview itinerario</p>
         <h2 class="section-title">${sec.title || 'Il percorso giorno per giorno'}</h2>
         <div class="divider"></div>
         <div class="overview-legend">
           <div class="legend-item"><div class="legend-dot"></div>Punto di interesse</div>
-          <div class="legend-item"><div class="legend-dash"><span></span><span></span><span></span><span></span><span></span></div>A piedi</div>
+          <div class="legend-item"><div class="legend-dash"><span></span><span></span><span></span><span></span><span></span></div>Spostamento</div>
           <div class="legend-item"><span class="legend-pin">📍</span>Maps</div>
         </div>
         <div class="overview-days">${daysHtml}</div>
