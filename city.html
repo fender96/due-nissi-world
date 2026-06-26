@@ -166,10 +166,13 @@ function introSection(sec, allSections) {
   (allSections || []).forEach((s, i) => {
     let def = null;
     if (s.type === 'poi') {
-      def = poiTagIcons[s.tag] || { icon: '📍', label: s.title || s.tag };
+      // Use actual title from JSON for label
+      const tagDef = poiTagIcons[s.tag];
+      def = tagDef
+        ? { icon: tagDef.icon, label: s.title || tagDef.label }
+        : { icon: '\ud83d\udccd', label: s.title || s.tag };
     } else if (anchorDefs[s.type]) {
-      def = anchorDefs[s.type];
-      if (s.title) def = { ...def, label: s.title };
+      def = { icon: anchorDefs[s.type].icon, label: s.title || anchorDefs[s.type].label };
     }
     if (def) anchors.push({ id: `section-${s.type}-${i}`, icon: def.icon, label: def.label });
   });
@@ -296,7 +299,29 @@ function overviewSection(sec, mapsData, sectionId) {
     </section>`;
 }
 
-function narrativePoiSection(sec, secIdx) {
+function transportSection(sec, sectionId) {
+  const cardsHtml = (sec.cards || []).map(card => `
+    <div class="transport-card">
+      <div class="transport-card-header">
+        <span class="transport-card-icon">${card.icon || '🚌'}</span>
+        <h4 class="transport-card-title">${card.title}</h4>
+      </div>
+      <div class="transport-card-body">${card.body}</div>
+    </div>`).join('');
+  const noteHtml = sec.note ? `<p class="transport-note">${sec.note}</p>` : '';
+  return `
+    <section class="transport-section" id="${sectionId}">
+      <div class="transport-inner">
+        <p class="section-tag">${sec.tag || 'Come spostarsi'}</p>
+        <h2 class="section-title">${sec.title || 'Come muoversi in città'}</h2>
+        <div class="divider"></div>
+        <div class="transport-cards">${cardsHtml}</div>
+        ${noteHtml}
+      </div>
+    </section>`;
+}
+
+function narrativePoiSection(sec, secIdx, sectionId) {
   // Determine if this is the main "journey" section (type narrative) or an extra poi section
   const isJourney = sec.type === 'narrative';
   const sectionTitle = isJourney ? (sec.title || 'Il nostro viaggio') : sec.title;
@@ -334,7 +359,7 @@ function narrativePoiSection(sec, secIdx) {
     bodyHtml = `<div class="narrative-entries">${entriesHtml}</div>`;
   }
 
-  return `<section class="narrative-section"><div class="narrative-inner">
+  return `<section class="narrative-section" id="${sectionId}"><div class="narrative-inner">
     <p class="section-tag">${sectionTag}</p>
     <h2 class="section-title" style="color:var(--navy);margin-bottom:1.2rem;">${sectionTitle}</h2>
     <div class="divider"></div>
@@ -420,12 +445,14 @@ function sleepSection(sec){return `<section class="section"><div class="section-
     const mapsSec = data.sections.find(s => s.type === 'maps');
 
     data.sections.forEach((sec, idx) => {
-      if (sec.type === 'poi')        container.insertAdjacentHTML('beforeend', narrativePoiSection(sec, idx));
-      if (sec.type === 'itinerary')  container.insertAdjacentHTML('beforeend', itinerarySection(sec));
-      if (sec.type === 'intro')      container.insertAdjacentHTML('beforeend', introSection(sec));
-      if (sec.type === 'overview')   container.insertAdjacentHTML('beforeend', overviewSection(sec, mapsSec));
-      if (sec.type === 'maps')       { /* merged into overview — skip standalone render */ }
-      if (sec.type === 'sleep')      container.insertAdjacentHTML('beforeend', sleepSection(sec));
+      const sid = `section-${sec.type}-${idx}`;
+      if (sec.type === 'poi')        container.insertAdjacentHTML('beforeend', narrativePoiSection(sec, idx, sid));
+      if (sec.type === 'itinerary')  container.insertAdjacentHTML('beforeend', itinerarySection(sec, sid));
+      if (sec.type === 'intro')      container.insertAdjacentHTML('beforeend', introSection(sec, data.sections));
+      if (sec.type === 'overview')   container.insertAdjacentHTML('beforeend', overviewSection(sec, mapsSec, sid));
+      if (sec.type === 'transport')  container.insertAdjacentHTML('beforeend', transportSection(sec, sid));
+      if (sec.type === 'maps')       { /* merged into overview — skip */ }
+      if (sec.type === 'sleep')      container.insertAdjacentHTML('beforeend', sleepSection(sec, sid));
     });
     // Riattiva expand dopo render dinamico
     document.querySelectorAll('.poi-expand').forEach(btn => {

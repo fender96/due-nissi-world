@@ -10,7 +10,7 @@
     {
       "type": "intro",
       "title": "Roma in 3 giorni",
-      "text": "Roma è una città che richiede tempo, ma con un itinerario ben costruito si possono vedere i luoghi più iconici senza correre. Questa guida segue il percorso che faremmo oggi, ottimizzando gli spostamenti a piedi e alternando monumenti, quartieri autentici e soste gastronomiche. Tutte le tappe sono state selezionate per offrire il miglior equilibrio tra storia, atmosfera e praticità."
+      "text": "Roma è una città che richiede tempo, ma con un itinerario ben costruito si possono vedere i luoghi più iconici senza correre."
     },
     {
       "type": "overview",
@@ -27,20 +27,25 @@
             },
             {
               "name": "Foro Romano",
-              "distance": "0.8 km",
-              "duration": "10 min",
+              "transports": [
+                { "mode": "walk", "distance": "0.8 km", "duration": "10 min" },
+                { "mode": "bus",  "distance": "0.8 km", "duration": "5 min" }
+              ],
               "maps_url": "https://maps.google.com/?q=Foro+Romano,Roma"
             },
             {
               "name": "Pantheon",
-              "distance": "1.5 km",
-              "duration": "20 min",
+              "transports": [
+                { "mode": "walk",  "distance": "1.5 km", "duration": "20 min" },
+                { "mode": "metro", "distance": "1.5 km", "duration": "8 min" }
+              ],
               "maps_url": "https://maps.google.com/?q=Pantheon,Roma"
             },
             {
               "name": "Fontana di Trevi",
-              "distance": "0.7 km",
-              "duration": "8 min",
+              "transports": [
+                { "mode": "walk", "distance": "0.7 km", "duration": "8 min" }
+              ],
               "maps_url": "https://maps.google.com/?q=Fontana+di+Trevi,Roma"
             }
           ]
@@ -86,6 +91,39 @@
           "tip": "Prenota i Musei Vaticani con almeno una settimana di anticipo, soprattutto in alta stagione."
         }
       ]
+    },
+    {
+      "type": "transport",
+      "tag": "muoversi in città",
+      "title": "Come spostarsi a Roma",
+      "cards": [
+        {
+          "icon": "🚇",
+          "title": "Metro",
+          "body": "Roma ha due linee principali (A e B) che coprono i punti chiave. La linea A tocca Spagna, Barberini e Ottaviano (Vaticano). Un biglietto singolo costa 1,50€ e vale 100 minuti. Acquista la <a href='https://www.atac.roma.it' target='_blank' rel='noopener'>CityPass ATAC</a> se prevedi molti spostamenti."
+        },
+        {
+          "icon": "🚌",
+          "title": "Bus e Tram",
+          "body": "La rete bus è capillare ma può essere lenta nel traffico. Ottima per raggiungere Trastevere e i quartieri non serviti dalla metro. L'app <a href='https://moovitapp.com' target='_blank' rel='noopener'>Moovit</a> è indispensabile per i percorsi in tempo reale."
+        },
+        {
+          "icon": "🚶",
+          "title": "A piedi",
+          "body": "Il centro storico si esplora benissimo a piedi. Tra Colosseo, Foro Romano, Pantheon e Fontana di Trevi la distanza è meno di 3 km. Portate scarpe comode — i sampietrini sono insidiosi."
+        },
+        {
+          "icon": "🚖",
+          "title": "Taxi e Uber",
+          "body": "I taxi bianchi hanno tariffe fisse verso/dall'aeroporto (48€ per Fiumicino). Per il centro usate <a href='https://www.itTaxi.it' target='_blank' rel='noopener'>itTaxi</a> o <a href='https://www.uber.com' target='_blank' rel='noopener'>Uber</a> per prenotare facilmente dal telefono."
+        },
+        {
+          "icon": "🛯",
+          "title": "Scooter e Monopattini",
+          "body": "Servizi di scooter sharing come <a href='https://www.cityscoot.eu' target='_blank' rel='noopener'>Cityscoot</a> sono ottimi per spostarsi velocemente. I monopattini elettrici (Lime, Bird) sono disponibili ovunque ma vietati sui sampietrini del centro."
+        }
+      ],
+      "note": "Consiglio: acquista un abbonamento giornaliero ATAC (7€) se prevedi più di 5 spostamenti in metro o bus nella stessa giornata."
     },
     {
       "type": "poi",
