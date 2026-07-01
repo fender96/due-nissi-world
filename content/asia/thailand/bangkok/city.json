@@ -140,6 +140,59 @@
       ]
     },
     {
+      "type": "maps",
+      "days": [
+        {
+          "day": 1,
+          "embed_url": "https://www.google.com/maps/embed?pb=!1m40!1m12!1m3!1d15499.5!2d100.489!3d13.745!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m25!3e2!4m3!3m2!1d13.7516!2d100.4927!4m3!3m2!1d13.7443!2d100.4917!4m3!3m2!1d13.7464!2d100.4928!4m3!3m2!1d13.7439!2d100.4884!4m3!3m2!1d13.7399!2d100.5138!5e0!3m2!1sit!2sit!4v1700000010",
+          "maps_url": "https://maps.google.com/maps/dir/Wat+Phra+Kaew+Bangkok/Wat+Pho+Bangkok/Wat+Arun+Bangkok/Yaowarat+Road+Chinatown+Bangkok"
+        },
+        {
+          "day": 2,
+          "embed_url": "https://www.google.com/maps/embed?pb=!1m24!1m12!1m3!1d62002!2d100.508!3d13.735!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m9!3e0!4m3!3m2!1d13.744!2d100.533!4m3!3m2!1d13.687!2d100.591!5e0!3m2!1sit!2sit!4v1700000011",
+          "maps_url": "https://maps.google.com/maps/dir/Platinum+Fashion+Mall+Bangkok/Bang+Kachao+Bangkok"
+        },
+        {
+          "day": 3,
+          "embed_url": "https://www.google.com/maps/embed?pb=!1m24!1m12!1m3!1d15502!2d100.505!3d13.752!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m9!3e2!4m3!3m2!1d13.758!2d100.511!4m3!3m2!1d13.753!2d100.506!5e0!3m2!1sit!2sit!4v1700000012",
+          "maps_url": "https://maps.google.com/maps/dir/Helping+Hands+Cooking+School+Bangkok/Wat+Saket+Golden+Mount+Bangkok/Krua+Apsorn+Bangkok"
+        }
+      ]
+    },
+    {
+      "type": "transport",
+      "tag": "muoversi in città",
+      "title": "Come spostarsi a Bangkok",
+      "cards": [
+        {
+          "icon": "🚇",
+          "title": "BTS Skytrain & MRT Metro",
+          "body": "La rete BTS (sopraelevata) e MRT (sotterranea) coprono la maggior parte delle attrazioni moderne. Un singolo biglietto costa tra 16–59 THB. Conviene acquistare una <a href='https://www.bts.co.th' target='_blank' rel='noopener'>Rabbit Card</a> ricaricabile per evitare code ai distributori ogni volta."
+        },
+        {
+          "icon": "🚖",
+          "title": "Grab (l'Uber asiatico)",
+          "body": "Grab è indispensabile a Bangkok. Costi fissi, nessuna trattativa, pagamento in app. Scaricatela prima di partire e collegate una carta di credito. Corse brevi (3–5 km) costano 60–100 THB. Nelle ore di punta calcolate il doppio del tempo."
+        },
+        {
+          "icon": "⛵",
+          "title": "Chao Phraya Express Boat",
+          "body": "Il modo più panoramico e veloce per raggiungere i templi del centro storico. Il traghetto orange-flag collega oltre 30 pier lungo il fiume — il biglietto costa 15 THB. Il pier N8 Tha Tian è il punto di riferimento per Wat Pho e il traghetto per Wat Arun."
+        },
+        {
+          "icon": "🚕",
+          "title": "Tuk-Tuk",
+          "body": "Iconici ma da usare con criterio: trattate sempre il prezzo prima di salire e diffidate di chi vi propone tour 'gratis'. Utili per brevi tratti pittoreschi. Per spostamenti pratici preferite Grab."
+        },
+        {
+          "icon": "🚂",
+          "title": "Airport Rail Link",
+          "body": "La linea ferroviaria collega l'aeroporto Suvarnabhumi al centro in 30 minuti per soli 45 THB — molto più economico e veloce del taxi nelle ore di punta. Fermata finale: Phaya Thai (BTS interchange)."
+        }
+      ],
+      "note": "Consiglio pratico: salvate l'indirizzo degli hotel in tailandese sullo smartphone — molti tassisti non leggono l'alfabeto latino."
+    },
+    {
       "type": "poi",
       "tag": "il nostro racconto",
       "title": "Il nostro viaggio",
@@ -148,7 +201,6 @@
           "name": "Wat Phra Kaew & Grand Palace",
           "maps_url": "https://www.google.com/maps/place/The+Grand+Palace/@13.7500232,100.4913325,17z",
           "book_url": "https://www.royalgrandpalace.th/en/buy-ticket/form",
-          "image": "images/Wat_Phra_Kaew.jpg",
           "description": "Il Grande Palazzo Reale di Bangkok non è solo un monumento, ma una vera e propria città nella città, circondata da mura bianche imponenti. Entrando, verrai immediatamente colpito dalla maestosità dell'architettura thailandese, dove ogni superficie sembra brillare sotto il sole grazie all'uso sapiente di mosaici di specchi, foglie d'oro e decorazioni intricate. Il Wat Phra Kaew, situato all'interno del complesso, ospita il sacro Buddha di Smeraldo, la statua più venerata di tutta la Thailandia, scolpita in un unico pezzo di giada verde. È un luogo di profonda spiritualità dove i fedeli arrivano da ogni parte del Paese per pregare, creando un'atmosfera unica di devozione mescolata al turismo internazionale. Ti consiglio vivamente di arrivare all'apertura, alle 8:30 del mattino, per evitare non solo il caldo soffocante delle ore centrali, ma soprattutto l'enorme afflusso di gruppi organizzati. Essendo un luogo sacro, è obbligatorio seguire un rigoroso codice di abbigliamento: spalle e ginocchia devono essere coperte sia per gli uomini che per le donne. Se dimentichi di coprirti, all'ingresso è possibile affittare indumenti adeguati, ma è molto meglio arrivare preparati. Prenditi tutto il tempo per osservare i dettagli dei guardiani giganti in ceramica che sorvegliano gli ingressi e le stupa dorate che svettano verso il cielo blu. È un'esperienza che definisce il viaggio in Thailandia e che ti regala scatti fotografici spettacolari ad ogni angolo del percorso. Ricorda che il biglietto d'ingresso costa 500 THB e include anche l'accesso ad altri musei nel complesso, rendendolo un investimento culturale imprescindibile. [📍 Google Maps · 🎟 Prenota]"
         },
         {
