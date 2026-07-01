@@ -7,47 +7,39 @@
   "banner_position": "center",
   "section_tag": "città visitate",
   "section_title": "Le nostre città in Thailandia",
-  "section_lead": "Dalla capitale caotica e affascinante alle isole di smeraldo del sud: la Thailandia nei nostri zaini, raccontata tappa per tappa.",
+  "section_lead": "Dalla capitale caotica e affascinante alle foreste pluviali del nord e alle isole di smeraldo del sud: la Thailandia nei nostri zaini, raccontata tappa per tappa in 15 giorni di viaggio a dicembre 2025.",
   "cities": [
     {
       "id": "bangkok",
       "name": "Bangkok",
-      "description": "Templi dorati, tuk-tuk e mercati galleggianti: la capitale che non dorme mai.",
+      "description": "Templi dorati, rooftop bar tra i grattacieli e street food fumante a Chinatown. La capitale che ti travolge.",
       "emoji": "🛕",
-      "image": null,
-      "active": false
-    },
-    {
-      "id": "krabi",
-      "name": "Krabi",
-      "description": "Scogliere calcaree a picco sul mare e acque turchesi: il paradiso del sud della Thailandia.",
-      "emoji": "🏝️",
-      "image": null,
-      "active": false
+      "image": "images/thailand-bangkok.jpg",
+      "active": true
     },
     {
       "id": "chiang-mai",
       "name": "Chiang Mai",
-      "description": "La \"rosa del nord\": templi antichi, santuari degli elefanti e mercati notturni.",
+      "description": "La rosa del Nord: templi antichi nella città murata, santuario degli elefanti e parco nazionale Doi Inthanon.",
       "emoji": "🐘",
-      "image": null,
-      "active": false
-    },
-    {
-      "id": "ao-nang",
-      "name": "Ao Nang",
-      "description": "La porta d'accesso alle isole di Krabi: spiagge, longtail boat e tramonti sul mare.",
-      "emoji": "⛵",
-      "image": null,
-      "active": false
+      "image": "images/thailand-chiangmai.jpg",
+      "active": true
     },
     {
       "id": "khao-sok",
       "name": "Khao Sok",
-      "description": "Foresta pluviale antica due volte l'Amazzonia, lago Cheow Larn e houseboat nella giungla.",
+      "description": "La foresta pluviale più antica del mondo: night safari, trekking e silenzio assoluto nella giungla.",
       "emoji": "🌿",
-      "image": null,
-      "active": false
+      "image": "images/thailand-khaosok.jpg",
+      "active": true
+    },
+    {
+      "id": "ao-nang",
+      "name": "Krabi & Ao Nang",
+      "description": "Scogliere calcaree a picco sul mare, Maya Bay, Ko Lanta e kayak tra i mangrovi. Il paradiso del sud.",
+      "emoji": "🏝️",
+      "image": "images/thailand-krabi.jpg",
+      "active": true
     }
   ]
 }

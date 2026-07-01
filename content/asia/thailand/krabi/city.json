@@ -2,9 +2,10 @@
   "id": "krabi",
   "country": "thailand",
   "continent": "asia",
-  "name": "Krabi",
-  "subtitle": "Scogliere, mare e silenzio",
-  "banner_image": null,
-  "banner_position": "center",
+  "name": "Krabi & Ao Nang",
+  "subtitle": "Scogliere calcaree, mare turchese e isole da sogno",
+  "redirect": "ao-nang",
+  "banner_image": "images/thailand-krabi.jpg",
+  "banner_position": "center 55%",
   "sections": []
 }
