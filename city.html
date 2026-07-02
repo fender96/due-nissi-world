@@ -388,6 +388,18 @@ function narrativePoiSection(sec, secIdx, sectionId) {
   </div></section>`;
 }
 
+function resolveAsset(path){
+    if(!path) return "";
+    if(path.startsWith("http")) return path;
+
+    const base =
+        location.hostname === "fender96.github.io"
+            ? "/due-nissi-world/"
+            : "/";
+
+    return base + path.replace(/^\/+/, "");
+}
+
 function buildNarrativeEntry(item, globalIdx) {
   // Even idx: text left + img right; odd: img left + text right
   const isReverse = globalIdx % 2 === 1;
@@ -416,17 +428,7 @@ function buildNarrativeEntry(item, globalIdx) {
 }
 function mapsSection(sec){return `<section class="section"><div class="section-inner"><h2 class="section-title">Mappe</h2>${(sec.days||[]).map(d=>`<div class='day-map'><h3>Giorno ${d.day}</h3>${d.embed_url?`<iframe src='${d.embed_url}' loading='lazy'></iframe>`:''}${d.maps_url?`<p><a target='_blank' href='${d.maps_url}'>Apri percorso completo su Google Maps</a></p>`:''}</div>`).join('')}</div></section>`;}
 function sleepSection(sec){return `<section class="section"><div class="section-inner"><h2 class="section-title">${sec.title||'Dove Dormire'}</h2>${(sec.items||[]).map(i=>`<div class='hotel-card'><h3>${i.name}</h3><p>${i.description||''}</p></div>`).join('')}</div></section>`;}
-function resolveAsset(path){
-    if(!path) return "";
-    if(path.startsWith("http")) return path;
 
-    const base =
-        location.hostname === "fender96.github.io"
-            ? "/due-nissi-world/"
-            : "/";
-
-    return base + path.replace(/^\/+/, "");
-}
 /* ===== Main ===== */
 (async () => {
   try {
