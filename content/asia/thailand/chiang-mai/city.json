@@ -18,65 +18,49 @@
       "days": [
         {
           "day": 1,
-          "title": "Arrivo & Mercati Notturni",
-          "subtitle": "Arrivo in aereo da Bangkok — pomeriggio al Doi Suthep, sera ai mercati.",
           "stops": [
             {
-              "name": "Arrivo all'aeroporto CNX — Hotel De Wualai",
+              "name": "Aeroporto CNX — Hotel De Wualai",
               "maps_url": "https://maps.google.com/?q=Hotel+De+Wualai+Chiang+Mai"
             },
             {
               "name": "Pranzo street food vicino all'hotel",
-              "transports": [
-                { "mode": "walk", "distance": "0.5 km", "duration": "5 min" }
-              ],
+              "transports": [{ "mode": "walk", "distance": "0.5 km", "duration": "5 min" }],
               "maps_url": "https://maps.google.com/?q=street+food+Chiang+Mai+city"
             },
             {
-              "name": "Doi Suthep Hiking Trail — fino a Wat Pha Lat",
-              "transports": [
-                { "mode": "taxi", "distance": "8 km", "duration": "20 min (Grab o Songthaew)" }
-              ],
+              "name": "Doi Suthep Hiking Trail — Wat Pha Lat",
+              "transports": [{ "mode": "taxi", "distance": "8 km", "duration": "20 min (Grab o Songthaew)" }],
               "maps_url": "https://maps.google.com/?q=Doi+Suthep+Hiking+Trail+Chiang+Mai"
             },
             {
               "name": "Night Market & Night Bazaar",
-              "transports": [
-                { "mode": "taxi", "distance": "5 km", "duration": "15 min" }
-              ],
+              "transports": [{ "mode": "taxi", "distance": "5 km", "duration": "15 min (Songthaew)" }],
               "maps_url": "https://maps.google.com/?q=Chiang+Mai+Night+Bazaar"
             }
           ]
         },
         {
           "day": 2,
-          "title": "Santuario degli Elefanti & Discoteca Thai",
-          "subtitle": "Giornata intera tra elefanti, bamboo rafting e cascate nella foresta.",
           "stops": [
             {
-              "name": "Elephant Sanctuary + Bamboo Rafting + Cascate (tutto il giorno)",
+              "name": "Elephant Sanctuary + Bamboo Rafting + Cascate (giornata intera)",
               "maps_url": "https://maps.google.com/?q=Elephant+Sanctuary+Chiang+Mai"
             },
             {
-              "name": "Cena e musica dal vivo da Tawandang Mahason",
-              "transports": [
-                { "mode": "taxi", "distance": "10 km", "duration": "20 min" }
-              ],
+              "name": "Cena da Tawandang Mahason — musica live",
+              "transports": [{ "mode": "taxi", "distance": "10 km", "duration": "20 min (Grab)" }],
               "maps_url": "https://maps.google.com/?q=Tawandang+Mahason+Chiang+Mai"
             },
             {
-              "name": "Sudsanan o Ploen Ruedee Night Market",
-              "transports": [
-                { "mode": "taxi", "distance": "3 km", "duration": "10 min" }
-              ],
+              "name": "Ploen Ruedee Night Market",
+              "transports": [{ "mode": "taxi", "distance": "3 km", "duration": "10 min (Songthaew)" }],
               "maps_url": "https://maps.google.com/?q=Ploen+Ruedee+Night+Market+Chiang+Mai"
             }
           ]
         },
         {
           "day": 3,
-          "title": "Tour della Città Vecchia & Cena Spettacolo",
-          "subtitle": "Mattina tra i templi della città murata, sera con spettacolo Kantoke tradizionale.",
           "stops": [
             {
               "name": "Wat Lok Moli",
@@ -84,63 +68,59 @@
             },
             {
               "name": "Wat Chiang Man",
-              "transports": [
-                { "mode": "walk", "distance": "0.5 km", "duration": "7 min" }
-              ],
+              "transports": [{ "mode": "walk", "distance": "0.5 km", "duration": "7 min" }],
               "maps_url": "https://maps.google.com/?q=Wat+Chiang+Man+Chiang+Mai"
             },
             {
               "name": "Monumento dei Tre Re",
-              "transports": [
-                { "mode": "walk", "distance": "0.7 km", "duration": "10 min" }
-              ],
+              "transports": [{ "mode": "walk", "distance": "0.7 km", "duration": "10 min" }],
               "maps_url": "https://maps.google.com/?q=Three+Kings+Monument+Chiang+Mai"
             },
             {
               "name": "Wat Chedi Luang",
-              "transports": [
-                { "mode": "walk", "distance": "0.4 km", "duration": "5 min" }
-              ],
+              "transports": [{ "mode": "walk", "distance": "0.4 km", "duration": "5 min" }],
               "maps_url": "https://maps.google.com/?q=Wat+Chedi+Luang+Chiang+Mai"
             },
             {
-              "name": "Pranzo da Kiat Ochat (miglior riso e pollo di CM)",
-              "transports": [
-                { "mode": "walk", "distance": "0.3 km", "duration": "4 min" }
-              ],
+              "name": "Pranzo da Kiat Ocha",
+              "transports": [{ "mode": "walk", "distance": "0.3 km", "duration": "4 min" }],
               "maps_url": "https://maps.google.com/?q=Kiat+Ocha+Chiang+Mai"
             },
             {
               "name": "Wat Phra Singh",
-              "transports": [
-                { "mode": "walk", "distance": "0.6 km", "duration": "8 min" }
-              ],
+              "transports": [{ "mode": "walk", "distance": "0.6 km", "duration": "8 min" }],
               "maps_url": "https://maps.google.com/?q=Wat+Phra+Singh+Chiang+Mai"
             },
             {
               "name": "Old Chiang Mai Kantoke Dinner Show (18:30)",
-              "transports": [
-                { "mode": "taxi", "distance": "3 km", "duration": "10 min" }
-              ],
+              "transports": [{ "mode": "taxi", "distance": "3 km", "duration": "10 min (Grab)" }],
               "maps_url": "https://maps.google.com/?q=Old+Chiang+Mai+Cultural+Center+Kantoke"
             }
           ]
         },
         {
           "day": 4,
-          "title": "Parco Nazionale Doi Inthanon",
-          "subtitle": "Giornata intera nel parco più alto della Thailandia — cascate, templi gemelli e foresta pluviale.",
           "stops": [
             {
-              "name": "Doi Inthanon National Park — Tour ecologico (tutto il giorno)",
+              "name": "Doi Inthanon National Park — tour ecologico (giornata intera)",
               "maps_url": "https://maps.google.com/?q=Doi+Inthanon+National+Park+Chiang+Mai"
             },
             {
               "name": "Rientro a Chiang Mai — cena in città",
-              "transports": [
-                { "mode": "bus", "distance": "85 km", "duration": "2h (van condiviso)" }
-              ],
+              "transports": [{ "mode": "bus", "distance": "85 km", "duration": "2h (van incluso nel tour)" }],
               "maps_url": "https://maps.google.com/?q=Chiang+Mai+city+center"
+            },
+            {
+              "name": "Aeroporto CNX ✈ Krabi",
+              "transports": [{ "mode": "taxi", "distance": "5 km", "duration": "15 min (Grab)" }],
+              "maps_url": "https://maps.google.com/?q=Chiang+Mai+International+Airport",
+              "next_city": {
+                "name": "Krabi & Ao Nang",
+                "id": "ao-nang",
+                "transport": "✈ Volo CNX→KBV",
+                "duration": "2h (con scalo BKK)",
+                "note": "Voli Thai AirAsia o Bangkok Airways via Bangkok. Alternativa: volo diretto con AirAsia nei periodi ad alta frequenza"
+              }
             }
           ]
         }
@@ -152,12 +132,12 @@
         {
           "day": 1,
           "embed_url": "https://www.google.com/maps/embed?pb=!1m24!1m12!1m3!1d30697!2d98.992!3d18.788!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m9!3e0!4m3!3m2!1d18.7883!2d98.9853!4m3!3m2!1d18.7994!2d98.9219!5e0!3m2!1sit!2sit!4v1700000020",
-          "maps_url": "https://maps.google.com/maps/dir/Hotel+De+Wualai+Chiang+Mai/Doi+Suthep+Hiking+Trail+Chiang+Mai/Chiang+Mai+Night+Bazaar"
+          "maps_url": "https://maps.google.com/maps/dir/Hotel+De+Wualai+Chiang+Mai/Doi+Suthep+Hiking+Trail/Chiang+Mai+Night+Bazaar"
         },
         {
           "day": 3,
           "embed_url": "https://www.google.com/maps/embed?pb=!1m40!1m12!1m3!1d15348!2d98.9842!3d18.7883!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m25!3e2!4m3!3m2!1d18.7974!2d98.9799!4m3!3m2!1d18.7908!2d98.9869!4m3!3m2!1d18.7872!2d98.9869!4m3!3m2!1d18.7839!2d98.9874!4m3!3m2!1d18.7815!2d98.9854!5e0!3m2!1sit!2sit!4v1700000021",
-          "maps_url": "https://maps.google.com/maps/dir/Wat+Lok+Moli+Chiang+Mai/Wat+Chiang+Man+Chiang+Mai/Wat+Chedi+Luang+Chiang+Mai/Wat+Phra+Singh+Chiang+Mai"
+          "maps_url": "https://maps.google.com/maps/dir/Wat+Lok+Moli+Chiang+Mai/Wat+Chiang+Man/Wat+Chedi+Luang/Wat+Phra+Singh+Chiang+Mai"
         }
       ]
     },
@@ -169,30 +149,25 @@
         {
           "icon": "🚐",
           "title": "Songthaew (taxi collettivo rosso)",
-          "body": "I pick-up rossi sono il mezzo simbolo di Chiang Mai. Si fermano ovunque, si condividono con altri passeggeri e costano circa 30–50 THB a corsa. Dite la destinazione al conducente e contrattate il prezzo prima di salire. Perfetti per i templi della città vecchia."
+          "body": "I pick-up rossi sono il mezzo simbolo di Chiang Mai. Si fermano ovunque, si condividono con altri passeggeri e costano circa 30–50 THB a corsa. Contrattate il prezzo prima di salire. Perfetti per i templi della città vecchia."
         },
         {
           "icon": "🚖",
           "title": "Grab",
-          "body": "Funziona anche a Chiang Mai, con tariffe fisse e senza trattative. Ideale per spostamenti verso il Doi Suthep o l'aeroporto. La copertura è buona nel centro, più scarsa fuori città."
+          "body": "Tariffe fisse senza trattative. Ideale per spostamenti verso il Doi Suthep o l'aeroporto. Copertura ottima nel centro, più scarsa fuori città."
         },
         {
           "icon": "🛵",
           "title": "Scooter a noleggio",
-          "body": "Il modo più libero per esplorare i dintorni. Costo: 150–250 THB al giorno. Patente internazionale teoricamente obbligatoria. Utile per raggiungere Doi Suthep al mattino presto (evitare il traffico) e per girare i templi fuori dal centro. Usate il casco sempre."
+          "body": "150–250 THB al giorno. Il modo più libero per raggiungere Doi Suthep al mattino presto ed esplorare i dintorni. Casco sempre."
         },
         {
           "icon": "🚶",
           "title": "A piedi nella città vecchia",
-          "body": "Il quadrato della città murata è percorribile interamente a piedi: lato di circa 1,5 km, con templi ad ogni angolo. Per la visita dei Giorni 3 e 6 del nostro itinerario non abbiamo usato alcun mezzo."
-        },
-        {
-          "icon": "🚌",
-          "title": "Van condivisi per fuori città",
-          "body": "Per Doi Inthanon, le agenzie di trekking o i tour organizzati includono il trasporto. In alternativa i van condivisi partono da Arcade Bus Terminal. Per Doi Suthep i Songthaew rossi partono da davanti al Meuang Chiang Mai Art & Cultural Centre."
+          "body": "Il quadrato della città murata (lato ~1,5 km) si percorre interamente a piedi. Quasi tutti i templi del Giorno 3 si raggiungono senza mezzi."
         }
       ],
-      "note": "Il centro storico di Chiang Mai ha traffico ridotto e si gira comodamente a piedi. Per uscire dalla città usate Grab o i Songthaew rossi."
+      "note": "Il centro storico di Chiang Mai ha traffico ridotto — giratela a piedi o in Songthaew rosso."
     },
     {
       "type": "poi",
@@ -200,42 +175,49 @@
       "title": "Il nostro viaggio",
       "items": [
         {
+          "day": 1,
           "name": "Doi Suthep Hiking Trail — Wat Pha Lat",
           "maps_url": "https://maps.google.com/?q=Doi+Suthep+Hiking+Trail+Chiang+Mai",
-          "description": "Il sentiero del monaco sale attraverso la foresta pluviale dal bordo della città fino al monastero di Wat Pha Lat, nascosto tra le radici degli alberi e le cascate — ci vuole circa un'ora di cammino. Abbiamo fatto il percorso al pomeriggio quando la luce filtrava tra le foglie: silenzioso, umido, meraviglioso. Chi vuole continuare fino al Doi Suthep in cima può prendere un taxi rosso dal punto di arrivo."
+          "description": "Il sentiero del monaco sale attraverso la foresta pluviale dal bordo della città fino al monastero di Wat Pha Lat, nascosto tra le radici degli alberi e le cascate — un'ora di cammino. Abbiamo fatto il percorso al pomeriggio quando la luce filtrava tra le foglie: silenzioso, umido, meraviglioso."
         },
         {
-          "name": "Night Market & Night Bazaar",
+          "day": 1,
+          "name": "Night Bazaar di Chiang Mai",
           "maps_url": "https://maps.google.com/?q=Chiang+Mai+Night+Bazaar",
-          "description": "Tre mercati quasi uno dentro l'altro: il Night Market sulla strada principale, il Night Bazaar e il Kalare all'interno. Vendono di tutto — boxer, t-shirt, oggetti in legno, dipinti, frutta essiccata. Prezzi da contrattare sempre. L'Anusarn Market accanto è più per i locali e ha cibo migliore."
+          "description": "Tre mercati quasi uno dentro l'altro: Night Market sulla strada principale, il Night Bazaar e il Kalare Market all'interno. Vendono di tutto a prezzi da contrattare sempre. L'Anusarn Market accanto è più per i locali e ha cibo migliore."
         },
         {
+          "day": 2,
           "name": "Elephant Sanctuary — Bamboo Rafting & Cascate",
           "maps_url": "https://maps.google.com/?q=Elephant+Sanctuary+Chiang+Mai",
           "book_url": "https://www.getyourguide.com/en-gb/chiang-mai-l271/chiang-mai-elephant-sanctuary-waterfall-bamboo-rafting-t826521/",
-          "description": "La giornata più memorabile del viaggio. Il santuario è etico: niente cavalcate, solo interazione libera con gli elefanti — dar loro da mangiare, camminare insieme, vederli fare il bagno nel fiume. Nel pomeriggio bamboo rafting sulle rapide tra le rocce e bagno nella cascata. Prenotare con giorni di anticipo, i posti si esauriscono. Costo: 96€ in due con trasporto incluso."
+          "description": "La giornata più memorabile del viaggio. Il santuario è etico: niente cavalcate, solo interazione libera — dar loro da mangiare, camminare insieme, vederli fare il bagno nel fiume. Nel pomeriggio bamboo rafting sulle rapide e bagno nella cascata. Costo: 96€ in due con trasporto incluso."
         },
         {
-          "name": "Tawandang Mahason — Cena con Musica Live",
+          "day": 2,
+          "name": "Tawandang Mahason",
           "maps_url": "https://maps.google.com/?q=Tawandang+Mahason+Chiang+Mai",
-          "description": "Una via di mezzo tra ristorante e discoteca thai: cibo ottimo (satay, som tum, maialino alla brace), birra Chang a fiumi e una band sul palco che suona classici thai e pop asiatico. La gente balla tra i tavoli. Uno spaccato di vita notturna locale completamente autentico — pochi turisti, tantissimi locali."
+          "description": "Via di mezzo tra ristorante e discoteca thai: satay, som tum, maialino alla brace, birra Chang e una band sul palco. La gente balla tra i tavoli. Pochi turisti, tantissimi locali."
         },
         {
+          "day": 3,
           "name": "Tour della Città Vecchia",
           "maps_url": "https://maps.google.com/?q=Chiang+Mai+Old+City+Walled+City",
-          "description": "Abbiamo fatto il giro al contrario rispetto alle guide — partendo da Wat Lok Moli a nord per scendere verso Wat Phra Singh. Sette templi in mezza giornata, quasi tutti gratuiti o con ingresso simbolico (40 THB). Il più spettacolare è Wat Chedi Luang con la sua prang crollata parzialmente nel 1545 da un terremoto e mai ricostruita. Pranzo intermedio da Kiat Ocha per il miglior khao man gai (riso e pollo) della città."
+          "description": "Sette templi in mezza giornata partendo da Wat Lok Moli a nord fino a Wat Phra Singh. Quasi tutti gratuiti o con ingresso simbolico (40 THB). Il più spettacolare è Wat Chedi Luang con la sua prang crollata nel 1545 e mai ricostruita. Pranzo da Kiat Ocha per il miglior khao man gai della città."
         },
         {
+          "day": 3,
           "name": "Old Chiang Mai Kantoke Dinner Show",
           "maps_url": "https://maps.google.com/?q=Old+Chiang+Mai+Cultural+Center+Kantoke",
           "book_url": "https://oldchiangmaihantoke.simplybook.asia/v2/",
-          "description": "Cena sul pavimento con piatti di riso appiccicoso, curry Lanna e maiale croccante, mentre danzatori in costume eseguono danze tradizionali del Nord. Non è turismo superficiale — la cena Kantoke è una tradizione secolare del popolo Lanna che si mangeva così nelle cerimonie importanti. Prenotare: ore 18:30. Costo nella norma per l'esperienza completa."
+          "description": "Cena sul pavimento con riso appiccicoso, curry Lanna e maiale croccante mentre danzatori in costume eseguono danze tradizionali Lanna. La cena Kantoke è una tradizione secolare — non turismo superficiale. Ore 18:30."
         },
         {
+          "day": 4,
           "name": "Parco Nazionale Doi Inthanon",
           "maps_url": "https://maps.google.com/?q=Doi+Inthanon+National+Park+Chiang+Mai",
           "book_url": "https://www.getyourguide.it/chiang-mai-l271/chiang-mai-tour-ecologico-del-parco-nazionale-doi-inthanon-t318498/",
-          "description": "Il tetto della Thailandia: 2.565 metri di quota, cascate che cadono dalla nebbia e i due chedì gemelli costruiti in onore del Re e della Regina. Il tour dura tutto il giorno e include la cascata Wachirathan, il sentiero naturalistico tra l'ecosistema d'alta quota e il villaggio Hmong. Temperature sorprendentemente fresche (15–18°C a dicembre) — portatevi un maglione. Costo: 76€ in due con trasporto."
+          "description": "Il tetto della Thailandia: 2.565 metri, cascate nella nebbia e i due chedì gemelli in onore del Re e della Regina. Il tour include la cascata Wachirathan, il sentiero d'alta quota e il villaggio Hmong. Temperature fresche (15–18°C a dicembre) — portatevi un maglione. Costo: 76€ in due con trasporto."
         }
       ]
     },
@@ -247,17 +229,12 @@
         {
           "name": "Cooking Class a Chiang Mai",
           "maps_url": "https://maps.google.com/?q=cooking+class+Chiang+Mai",
-          "description": "Chiang Mai è la capitale della cucina thai del Nord, diversa da quella di Bangkok. Le cooking class qui includono spesso un giro al mercato mattutino e insegnano piatti Lanna non trovabili altrove. Molte scuole nelle vicinanze del mercato Warorot."
+          "description": "Chiang Mai è la capitale della cucina thai del Nord, diversa da Bangkok. Le cooking class includono un giro al mercato mattutino e insegnano piatti Lanna non trovabili altrove."
         },
         {
-          "name": "Wat Doi Suthep in cima alla montagna",
+          "name": "Wat Doi Suthep in cima",
           "maps_url": "https://maps.google.com/?q=Wat+Doi+Suthep+Chiang+Mai",
-          "description": "Il tempio più sacro del Nord Thailandia, a 1.000 metri di quota. Si raggiunge in songthaew dal centro (50 THB) o a piedi con il sentiero del monaco. 309 gradini del Naga Staircase per arrivare alla terrazza con vista sulla città. Aperto 6:00–20:00, ingresso 50 THB."
-        },
-        {
-          "name": "Ploen Ruedee Night Market",
-          "maps_url": "https://maps.google.com/?q=Ploen+Ruedee+Night+Market+Chiang+Mai",
-          "description": "Mercato serale più moderno e hipster rispetto al Night Bazaar classico. Musica live, craft beer, food truck e una clientela mista locale-espat. Ottimo per una birra serale senza le pressioni dei venditori ambulanti del mercato turistico."
+          "description": "Il tempio più sacro del Nord a 1.000 metri di quota. 309 gradini del Naga Staircase per arrivare alla terrazza con vista sulla città. Songthaew dal centro 50 THB. Aperto 6:00–20:00, ingresso 50 THB."
         }
       ]
     },
@@ -269,12 +246,12 @@
         {
           "name": "Kiat Ocha — Riso e Pollo",
           "maps_url": "https://maps.google.com/?q=Kiat+Ocha+Chiang+Mai",
-          "description": "Il Khao Man Gai (riso cotto nel brodo di pollo con pollo lessato e salsa di soia fermentata) di Kiat Ocha è leggendario tra i locali. Locale minimal, code all'apertura, prezzi da 60–80 THB a piatto. Pranzo only."
+          "description": "Il Khao Man Gai di Kiat Ocha è leggendario tra i locali. Locale minimal, code all'apertura, 60–80 THB a piatto. Solo pranzo."
         },
         {
           "name": "Sudsanan — Musica Folk dal Vivo",
           "maps_url": "https://maps.google.com/?q=Sudsanan+Chiang+Mai",
-          "description": "Locale autentico con musica folk lanna dal vivo, cibo thai e birra. Frequentato quasi esclusivamente da locali — niente menu in inglese ma i piatti vengono portati al tavolo in stile condiviso. Serata inaspettatamente coinvolgente."
+          "description": "Musica folk lanna dal vivo, cibo thai e birra. Quasi solo locali — niente menu in inglese. Serata inaspettatamente coinvolgente."
         }
       ]
     }

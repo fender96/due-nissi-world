@@ -10,7 +10,7 @@
     {
       "type": "intro",
       "title": "Krabi in 6 giorni",
-      "text": "Krabi è la provincia, Ao Nang il villaggio balneare da cui partono tutti i ferry per le isole. Cinque notti di bungalow sulla spiaggia, scogliere calcaree che precipitano nel mare, escursioni alle 4 Isole, snorkeling a Maya Bay e un giorno intero pedalando attorno a Ko Lanta. La parte più rilassata del viaggio — quella che ti fa venire voglia di non partire più."
+      "text": "Krabi è la provincia, Ao Nang il villaggio balneare da cui partono tutti i ferry per le isole. Cinque notti di bungalow sulla spiaggia, scogliere calcaree che precipitano nel mare, Maya Bay, Ko Lanta in bici e kayak tra i mangrovi. La parte più rilassata del viaggio."
     },
     {
       "type": "overview",
@@ -18,8 +18,6 @@
       "days": [
         {
           "day": 1,
-          "title": "Arrivo & Wat Tham Suea",
-          "subtitle": "Arrivo in aereo da Chiang Mai — pomeriggio al Tempio della Tigre tra le rocce.",
           "stops": [
             {
               "name": "Arrivo aeroporto KBV — Airbnb Ao Nang",
@@ -27,35 +25,34 @@
             },
             {
               "name": "Pranzo vicino all'Airbnb",
-              "transports": [
-                { "mode": "walk", "distance": "0.5 km", "duration": "5 min" }
-              ],
+              "transports": [{ "mode": "walk", "distance": "0.5 km", "duration": "5 min" }],
               "maps_url": "https://maps.google.com/?q=Ao+Nang+Beach+Krabi"
             },
             {
-              "name": "Wat Tham Suea — Tempio della Tigre (salita rocce)",
-              "transports": [
-                { "mode": "taxi", "distance": "8 km", "duration": "15 min (Grab)" }
-              ],
+              "name": "Wat Tham Suea — Tempio della Tigre",
+              "transports": [{ "mode": "taxi", "distance": "8 km", "duration": "15 min (Grab)" }],
               "maps_url": "https://maps.google.com/?q=Wat+Tham+Suea+Tiger+Cave+Temple+Krabi"
             }
           ]
         },
         {
           "day": 2,
-          "title": "Khao Sok — Partenza (Night Safari)",
-          "subtitle": "Trasferimento a Khao Sok per il night safari notturno in foresta.",
           "stops": [
             {
               "name": "Partenza per Khao Sok in van condiviso",
-              "maps_url": "https://maps.google.com/?q=Khao+Sok+National+Park"
+              "maps_url": "https://maps.google.com/?q=Khao+Sok+National+Park",
+              "next_city": {
+                "name": "Khao Sok",
+                "id": "khao-sok",
+                "transport": "🚐 Van condiviso Ao Nang→Khao Sok",
+                "duration": "3h",
+                "note": "Van prenotabile la sera prima nelle agenzie di Ao Nang. Partenza mattutina ~8:00"
+              }
             }
           ]
         },
         {
           "day": 3,
-          "title": "Khao Sok — Trekking & Rientro",
-          "subtitle": "Giornata intera di trekking nella foresta pluviale più antica del mondo, rientro ad Ao Nang.",
           "stops": [
             {
               "name": "Full-day trekking Khao Sok",
@@ -63,56 +60,42 @@
             },
             {
               "name": "Rientro ad Ao Nang in serata",
-              "transports": [
-                { "mode": "bus", "distance": "170 km", "duration": "3h (van condiviso)" }
-              ],
+              "transports": [{ "mode": "bus", "distance": "170 km", "duration": "3h (van condiviso)" }],
               "maps_url": "https://maps.google.com/?q=Ao+Nang+Krabi+Thailand"
             }
           ]
         },
         {
           "day": 4,
-          "title": "Tour Phi Phi & 4 Isole",
-          "subtitle": "Giornata intera in barca tra le isole più belle della Thailandia.",
           "stops": [
             {
-              "name": "Ferry da Ao Nang Pier",
+              "name": "Ao Nang Pier — imbarco tour early bird (7:00)",
               "maps_url": "https://maps.google.com/?q=Ao+Nang+Pier+Krabi"
             },
             {
-              "name": "Maya Bay — The Beach di Leo DiCaprio",
-              "transports": [
-                { "mode": "boat", "distance": "40 km", "duration": "1h30 in barca" }
-              ],
+              "name": "Maya Bay — Phi Phi",
+              "transports": [{ "mode": "boat", "distance": "40 km", "duration": "1h30 in speedboat" }],
               "maps_url": "https://maps.google.com/?q=Maya+Bay+Phi+Phi+Island+Thailand"
             },
             {
               "name": "Phi Phi Don — viewpoint e snorkeling",
-              "transports": [
-                { "mode": "boat", "distance": "5 km", "duration": "15 min" }
-              ],
+              "transports": [{ "mode": "boat", "distance": "5 km", "duration": "15 min" }],
               "maps_url": "https://maps.google.com/?q=Phi+Phi+Don+Island+Thailand"
             },
             {
               "name": "Krabi 4 Islands — snorkeling e spiagge",
-              "transports": [
-                { "mode": "boat", "distance": "20 km", "duration": "45 min" }
-              ],
+              "transports": [{ "mode": "boat", "distance": "20 km", "duration": "45 min" }],
               "maps_url": "https://maps.google.com/?q=4+Islands+Krabi+Thailand"
             },
             {
               "name": "Rientro ad Ao Nang",
-              "transports": [
-                { "mode": "boat", "distance": "35 km", "duration": "1h15" }
-              ],
+              "transports": [{ "mode": "boat", "distance": "35 km", "duration": "1h15" }],
               "maps_url": "https://maps.google.com/?q=Ao+Nang+Pier+Krabi"
             }
           ]
         },
         {
           "day": 5,
-          "title": "Ko Lanta — Giro in Bici sull'Isola",
-          "subtitle": "Trasferimento in pullman a Ko Lanta, noleggio bici per un giorno intero.",
           "stops": [
             {
               "name": "Pullman da Ao Nang per Ko Lanta",
@@ -120,42 +103,39 @@
             },
             {
               "name": "Noleggio bici — giro dell'isola",
-              "transports": [
-                { "mode": "ferry", "distance": "25 km", "duration": "45 min + ferry" }
-              ],
+              "transports": [{ "mode": "ferry", "distance": "25 km", "duration": "45 min + ferry 20 min" }],
               "maps_url": "https://maps.google.com/?q=Ko+Lanta+Old+Town+Thailand"
             },
             {
               "name": "Rientro ad Ao Nang in tarda serata",
-              "transports": [
-                { "mode": "bus", "distance": "70 km", "duration": "2h30 (pullman + ferry)" }
-              ],
+              "transports": [{ "mode": "bus", "distance": "70 km", "duration": "2h30 (pullman + ferry)" }],
               "maps_url": "https://maps.google.com/?q=Ao+Nang+Krabi+Thailand"
             }
           ]
         },
         {
           "day": 6,
-          "title": "Kayak nei Mangrovi & Partenza",
-          "subtitle": "Mattina in kayak tra i canali di mangrovie, poi partenza per Bangkok.",
           "stops": [
             {
-              "name": "Kayak a Klong Rud con transfer hotel",
+              "name": "Kayak a Klong Rud (mattina)",
               "maps_url": "https://maps.google.com/?q=Klong+Rud+Kayak+Ao+Nang+Krabi"
             },
             {
-              "name": "Rientro e preparazione bagagli",
-              "transports": [
-                { "mode": "taxi", "distance": "5 km", "duration": "10 min" }
-              ],
+              "name": "Rientro in Airbnb — preparazione bagagli",
+              "transports": [{ "mode": "taxi", "distance": "5 km", "duration": "10 min (Grab)" }],
               "maps_url": "https://maps.google.com/?q=Ao+Nang+Krabi+Thailand"
             },
             {
-              "name": "Partenza aeroporto KBV per Bangkok (8:35)",
-              "transports": [
-                { "mode": "taxi", "distance": "25 km", "duration": "30 min" }
-              ],
-              "maps_url": "https://maps.google.com/?q=Krabi+Airport+Thailand"
+              "name": "Aeroporto KBV ✈ Bangkok",
+              "transports": [{ "mode": "taxi", "distance": "25 km", "duration": "30 min (Grab)" }],
+              "maps_url": "https://maps.google.com/?q=Krabi+Airport+Thailand",
+              "next_city": {
+                "name": "Bangkok",
+                "id": "bangkok",
+                "transport": "✈ Volo KBV→BKK",
+                "duration": "1h20",
+                "note": "Volo mattutino 8:35. Ultima tappa del viaggio: altri 2 giorni a Bangkok prima del volo di rientro"
+              }
             }
           ]
         }
@@ -184,30 +164,25 @@
         {
           "icon": "⛵",
           "title": "Ferry da Ao Nang Pier",
-          "body": "Ao Nang Pier è il punto di partenza per tutto: ferry per Railay Beach (ogni 15 min, 100 THB), barconi per Ko Phi Phi (2h, 350 THB), speedboat per le 4 isole. I tour organizzati partono quasi tutti dal pier o vi recuperano in hotel."
+          "body": "Il punto di partenza per tutto: ferry per Railay Beach (ogni 15 min, 100 THB), barconi per Ko Phi Phi (2h, 350 THB), speedboat per le 4 isole. I tour partono dal pier o in hotel pickup."
         },
         {
           "icon": "🚖",
           "title": "Grab & Taxi locali",
-          "body": "Grab funziona bene nell'area di Ao Nang e Krabi Town. Per l'aeroporto conviene un taxi fisso (400–500 THB). I tuk-tuk locali coprono brevi distanze per 100–200 THB."
+          "body": "Grab funziona bene ad Ao Nang e Krabi Town. Per l'aeroporto conviene un taxi fisso (400–500 THB). Tuk-tuk locali per brevi tratti a 100–200 THB."
         },
         {
           "icon": "🚐",
-          "title": "Pullman per Ko Lanta e dintorni",
-          "body": "I minivan condivisi collegano Ao Nang con Ko Lanta (2h30 incluso ferry, circa 350 THB), Khao Sok (3h, 400 THB) e l'aeroporto. Prenotate il giorno prima nelle agenzie lungo la strada principale di Ao Nang."
-        },
-        {
-          "icon": "🛵",
-          "title": "Scooter a Ko Lanta",
-          "body": "A Ko Lanta il noleggio scooter è il modo migliore per esplorare l'isola — strade tranquille, pochi autobus. Costo: 200–250 THB al giorno. Noi abbiamo usato la bici (più lenta ma più soddisfacente)."
+          "title": "Minivan per Ko Lanta e Khao Sok",
+          "body": "Minivan condivisi collegano Ao Nang con Ko Lanta (2h30+ferry, ~350 THB) e Khao Sok (3h, ~400 THB). Prenotate il giorno prima nelle agenzie sulla strada principale."
         },
         {
           "icon": "🏖️",
-          "title": "Longtail boat",
-          "body": "Per Railay Beach (non raggiungibile via terra — è circondata da scogliere) si prende il longtail boat da Ao Nang Pier: 15 minuti, 100 THB. I longtail si affittano anche privatamente per girare le grotte marine."
+          "title": "Longtail boat per Railay",
+          "body": "Railay non è raggiungibile via terra. Longtail boat da Ao Nang Pier: 15 minuti, 100 THB. Affittabili anche privatamente per le grotte marine."
         }
       ],
-      "note": "A Krabi il mare è calmissimo da novembre a marzo. Evitate il monsone (maggio–ottobre): molti ferry si fermano e le isole diventano inaccessibili."
+      "note": "Il mare è calmissimo da novembre a marzo. Evitate il monsone (maggio–ottobre): molti ferry si fermano."
     },
     {
       "type": "poi",
@@ -215,26 +190,30 @@
       "title": "Il nostro viaggio",
       "items": [
         {
+          "day": 1,
           "name": "Wat Tham Suea — Tempio della Tigre",
           "maps_url": "https://maps.google.com/?q=Wat+Tham+Suea+Tiger+Cave+Temple+Krabi",
-          "description": "1.237 gradini di pietra verticali che salgono tra le rocce fino alla sommità della collina calcarea. Siamo arrivati nel pomeriggio — un errore, fa caldissimo: andate all'alba. In cima: una grande statua dorata del Buddha, la vista sulle pianure di Krabi fino al mare, e la ricompensa di aver salito 600 metri di dislivello a piedi. Le ginocchia piangevano, l'anima esultava."
+          "description": "1.237 gradini di pietra verticali che salgono tra le rocce fino alla sommità. Siamo arrivati nel pomeriggio — un errore, fa caldissimo: andate all'alba. In cima: statua dorata del Buddha, vista sulle pianure di Krabi fino al mare. Le ginocchia piangevano, l'anima esultava."
         },
         {
+          "day": 4,
           "name": "Tour Phi Phi & 4 Isole Early Bird",
           "maps_url": "https://maps.google.com/?q=Phi+Phi+Island+Thailand",
           "book_url": "https://www.viator.com/it-IT/tours/Krabi/Phi-Phi-Early-Bird-and-Krabi-4-Islands-Beat-the-crowds/d348-108960P1",
-          "description": "Abbiamo scelto il tour early bird — partenza alle 7:00 — per vedere Maya Bay prima che arrivino le masse. La baia de 'The Beach' è reale: acque azzurre, scogliere verticali, sabbia bianca. Alle 9:00 ci siamo già immersi in snorkeling tra i pesci tropicali. Nel pomeriggio le 4 isole di Krabi, con una sosta a Railay Beach vista dal mare. Una giornata perfetta."
+          "description": "Partenza alle 7:00 per vedere Maya Bay prima delle masse. La baia de 'The Beach' è reale: acque azzurre, scogliere verticali, sabbia bianca. Alle 9:00 già in snorkeling tra i pesci tropicali. Nel pomeriggio le 4 isole di Krabi con sosta a Railay."
         },
         {
+          "day": 5,
           "name": "Ko Lanta — Giorno in Bici",
           "maps_url": "https://maps.google.com/?q=Ko+Lanta+Thailand",
-          "description": "Ko Lanta è più grande e meno turistica di Phi Phi. Abbiamo noleggiato due bici al pier e pedalato mezza giornata verso sud: villaggi di pescatori, un tempio sull'acqua, la Old Town di Ko Lanta (case coloniali cinesi su palafitte). La parte nord dell'isola è più sviluppata; la sud quasi deserta. Nessuna fretta — quella è la regola."
+          "description": "Ko Lanta è più grande e meno turistica di Phi Phi. Due bici noleggiate al pier, mezza giornata verso sud: villaggi di pescatori, un tempio sull'acqua, la Old Town su palafitte coloniali cinesi. La parte sud è quasi deserta. Nessuna fretta — quella è la regola."
         },
         {
+          "day": 6,
           "name": "Kayak a Klong Rud",
           "maps_url": "https://maps.google.com/?q=Klong+Rud+Kayak+Ao+Nang+Krabi",
           "book_url": "https://www.getyourguide.com/it-it/ao-nang-l89867/kayak-a-klong-rud-con-trasferimento-in-hotel-t640702/",
-          "description": "L'ultimo mattino prima di partire: kayak nei canali di mangrovie di Klong Rud, con la guida che ci mostra come i pescatori locali tendono le reti. Tra le radici degli alberi passano i martin pescatori a pelo d'acqua. Un'ora e mezza di pagaia silenziosa tra la natura — il finale perfetto per questa parte del viaggio."
+          "description": "L'ultimo mattino: kayak nei canali di mangrovie di Klong Rud. La guida ci mostra come i pescatori tendono le reti. Martin pescatori a pelo d'acqua tra le radici degli alberi. Un'ora e mezza di pagaia silenziosa — il finale perfetto."
         }
       ]
     },
@@ -246,17 +225,12 @@
         {
           "name": "Railay Beach",
           "maps_url": "https://maps.google.com/?q=Railay+Beach+Krabi+Thailand",
-          "description": "La spiaggia più bella di Krabi, raggiungibile solo in barca (15 min da Ao Nang, 100 THB). Circondata da pareti calcaree altissime, è un paradiso per climbers e una cartolina vivente. Rilassatevi a Railay West Beach e esplorate la laguna nascosta dal lato est."
-        },
-        {
-          "name": "Rock Climbing a Railay",
-          "maps_url": "https://maps.google.com/?q=Rock+Climbing+Railay+Krabi",
-          "description": "Krabi è una delle mete di arrampicata più iconiche al mondo. Le pareti calcaree di Railay e Ton Sai offrono vie per tutti i livelli. Le agenzie locali affittano attrezzatura e guidano anche i principianti sulle vie più facili."
+          "description": "La spiaggia più bella di Krabi, raggiungibile solo in barca (15 min, 100 THB). Pareti calcaree altissime, paradiso per climbers. Rilassatevi a Railay West ed esplorate la laguna nascosta sul lato est."
         },
         {
           "name": "Snorkeling a Ko Poda e Ko Kai",
           "maps_url": "https://maps.google.com/?q=Ko+Poda+Krabi+Thailand",
-          "description": "Le isole più vicine ad Ao Nang offrono acque cristalline e barriere coralline intatte. Ko Poda è raggiungibile in longtail boat in 30 minuti. Ko Kai (Chicken Island) ha la punta rocciosa che assomiglia a un pollo — imperdibile per la foto."
+          "description": "Acque cristalline e barriere coralline intatte vicino ad Ao Nang. Ko Poda in longtail boat in 30 min. Ko Kai (Chicken Island) ha la punta rocciosa a forma di pollo."
         }
       ]
     },
@@ -268,12 +242,12 @@
         {
           "name": "Street food sul lungomare",
           "maps_url": "https://maps.google.com/?q=Ao+Nang+Beach+Road+food",
-          "description": "La strada principale di Ao Nang si anima di sera con venditori di sate, pad thai, frutta alla griglia e frutti di mare freschi. Prezzi da 80–150 THB. I seafood restaurant con le vasche di pesce vivo sul marciapiede hanno tutti qualità simile — scelto quello con più locali seduti dentro."
+          "description": "La strada principale si anima di sera: sate, pad thai, frutta alla griglia e frutti di mare freschi. 80–150 THB. Scegliete il locale con più clienti locali seduti dentro."
         },
         {
           "name": "Ristoranti sul mare a Railay",
           "maps_url": "https://maps.google.com/?q=Railay+Beach+Restaurants+Krabi",
-          "description": "I ristoranti sulla spiaggia di Railay West sono più cari della media ma l'ambientazione vale il supplemento: tavoli in riva al mare con le pareti calcaree che si tingono di rosa al tramonto. Cocktail e frutti di mare."
+          "description": "Più cari della media ma le pareti calcaree al tramonto valgono il supplemento. Cocktail e frutti di mare in riva al mare."
         }
       ]
     }

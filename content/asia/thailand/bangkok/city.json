@@ -9,7 +9,7 @@
   "sections": [
     {
       "type": "intro",
-      "title": "Bangkok in 4 giorni",
+      "title": "Bangkok in 3 giorni",
       "text": "Bangkok è una città che ti travolge: templi dorati, canal boat sul fiume, street food fumante a Chinatown e rooftop bar tra i grattacieli. Ci siamo stati all'inizio e alla fine del viaggio, e ogni volta ha saputo sorprenderci."
     },
     {
@@ -25,37 +25,27 @@
             },
             {
               "name": "Pranzo da Tha Arun (vista sul fiume)",
-              "transports": [
-                { "mode": "walk", "distance": "0.5 km", "duration": "7 min" }
-              ],
+              "transports": [{ "mode": "walk", "distance": "0.5 km", "duration": "7 min" }],
               "maps_url": "https://www.google.com/maps/place/THA+ARUN/@13.7443213,100.489157,16z"
             },
             {
               "name": "Wat Pho — Tempio del Buddha Sdraiato",
-              "transports": [
-                { "mode": "walk", "distance": "0.7 km", "duration": "10 min" }
-              ],
+              "transports": [{ "mode": "walk", "distance": "0.7 km", "duration": "10 min" }],
               "maps_url": "https://www.google.com/maps/place/Wat+Phra+Chetuphon+Wimon+Mangkhalaram/@13.7464237,100.4901984,17z"
             },
             {
               "name": "Wat Arun — Tempio dell'Alba",
-              "transports": [
-                { "mode": "ferry", "distance": "300 m", "duration": "5 min (ferry da Tha Tian Pier)" }
-              ],
+              "transports": [{ "mode": "ferry", "distance": "300 m", "duration": "5 min (ferry da Tha Tian Pier)" }],
               "maps_url": "https://www.google.com/maps/place/Wat+Arun+Ratchawararam+Ratchawaramahawihan/@13.7438652,100.4858691,17z"
             },
             {
               "name": "Cena a Chinatown — Yaowarat Road",
-              "transports": [
-                { "mode": "taxi", "distance": "3 km", "duration": "15 min (Grab)" }
-              ],
+              "transports": [{ "mode": "metro", "distance": "4 km", "duration": "12 min (MRT Hua Lamphong)" }],
               "maps_url": "https://maps.google.com/?q=Yaowarat+Road+Chinatown+Bangkok"
             },
             {
               "name": "Vertigo Moon Bar — Rooftop al 61° piano",
-              "transports": [
-                { "mode": "taxi", "distance": "5 km", "duration": "20 min (Grab)" }
-              ],
+              "transports": [{ "mode": "taxi", "distance": "5 km", "duration": "20 min (Grab)" }],
               "maps_url": "https://www.google.com/maps/place/Vertigo+%26+Moon+Bar+Rooftop/@13.7235647,100.5347345,17z"
             }
           ]
@@ -69,30 +59,22 @@
             },
             {
               "name": "Pranzo da Sanguan Sri",
-              "transports": [
-                { "mode": "metro", "distance": "2 km", "duration": "10 min (MRT)" }
-              ],
+              "transports": [{ "mode": "metro", "distance": "1.5 km", "duration": "8 min (BTS Ratchadamri)" }],
               "maps_url": "https://www.google.com/maps/place/Sanguan+Sri/@13.7419774,100.5474585,16z"
             },
             {
               "name": "Bang Kachao — giro in bici sull'isola verde",
-              "transports": [
-                { "mode": "taxi", "distance": "8 km", "duration": "25 min + ferry 10 min" }
-              ],
+              "transports": [{ "mode": "taxi", "distance": "9 km", "duration": "25 min + 10 min ferry (Grab)" }],
               "maps_url": "https://maps.google.com/?q=Bang+Kachao+Bangkok"
             },
             {
               "name": "Tè da Mitramit",
-              "transports": [
-                { "mode": "taxi", "distance": "10 km", "duration": "25 min (Grab)" }
-              ],
+              "transports": [{ "mode": "taxi", "distance": "10 km", "duration": "25 min (Grab)" }],
               "maps_url": "https://maps.google.com/?q=Mitramit+Bangkok"
             },
             {
               "name": "SkyWalk o Speaker Box per musica live",
-              "transports": [
-                { "mode": "taxi", "distance": "3 km", "duration": "15 min" }
-              ],
+              "transports": [{ "mode": "taxi", "distance": "3 km", "duration": "12 min (Grab)" }],
               "maps_url": "https://maps.google.com/?q=SkyWalk+Bangkok"
             }
           ]
@@ -105,35 +87,34 @@
               "maps_url": "https://maps.google.com/?q=Helping+Hands+Cooking+School+Bangkok"
             },
             {
-              "name": "Golden Mount — Wat Saket (tramonto)",
-              "transports": [
-                { "mode": "taxi", "distance": "3 km", "duration": "15 min (Grab)" }
-              ],
+              "name": "Golden Mount — Wat Saket",
+              "transports": [{ "mode": "metro", "distance": "3 km", "duration": "10 min (MRT Sam Yot) + 5 min a piedi" }],
               "maps_url": "https://maps.google.com/?q=Wat+Saket+Golden+Mount+Bangkok"
             },
             {
               "name": "Cena da Krua Apsorn @Dinso Road",
-              "transports": [
-                { "mode": "walk", "distance": "0.8 km", "duration": "12 min" }
-              ],
+              "transports": [{ "mode": "walk", "distance": "0.8 km", "duration": "12 min" }],
               "maps_url": "https://maps.google.com/?q=Krua+Apsorn+Dinso+Bangkok"
-            }
-          ]
-        },
-        {
-          "day": 4,
-          "stops": [
+            },
             {
-              "name": "Mercato di Chatuchak (9:00–18:00)",
+              "name": "Mercato di Chatuchak (mattina presto)",
+              "transports": [{ "mode": "metro", "distance": "8 km", "duration": "20 min (BTS Mo Chit)" }],
               "maps_url": "https://maps.google.com/?q=Chatuchak+Weekend+Market+Bangkok"
             },
             {
-              "name": "Transfer all'aeroporto Suvarnabhumi (BKK)",
+              "name": "Aeroporto Suvarnabhumi (BKK) ✈ Chiang Mai",
               "transports": [
                 { "mode": "train", "distance": "30 km", "duration": "30 min (Airport Rail Link)" },
-                { "mode": "taxi", "distance": "30 km", "duration": "45 min (Grab)" }
+                { "mode": "taxi", "distance": "30 km", "duration": "45 min (Grab, ore di punta)" }
               ],
-              "maps_url": "https://maps.google.com/?q=Suvarnabhumi+Airport+Bangkok"
+              "maps_url": "https://maps.google.com/?q=Suvarnabhumi+Airport+Bangkok",
+              "next_city": {
+                "name": "Chiang Mai",
+                "id": "chiang-mai",
+                "transport": "✈ Volo BKK→CNX",
+                "duration": "1h20",
+                "note": "Bangkok Airways e Thai AirAsia, più voli al giorno. Tariffa media 40–80€"
+              }
             }
           ]
         }
@@ -172,25 +153,20 @@
         {
           "icon": "🚖",
           "title": "Grab (l'Uber asiatico)",
-          "body": "Grab è indispensabile a Bangkok. Costi fissi, nessuna trattativa, pagamento in app. Scaricatela prima di partire e collegate una carta di credito. Corse brevi (3–5 km) costano 60–100 THB. Nelle ore di punta calcolate il doppio del tempo."
+          "body": "Grab è indispensabile per le zone non coperte dalla metro. Costi fissi, nessuna trattativa, pagamento in app. Corse brevi (3–5 km) costano 60–100 THB. Nelle ore di punta calcolate il doppio del tempo."
         },
         {
           "icon": "⛵",
           "title": "Chao Phraya Express Boat",
-          "body": "Il modo più panoramico e veloce per raggiungere i templi del centro storico. Il traghetto orange-flag collega oltre 30 pier lungo il fiume — il biglietto costa 15 THB. Il pier N8 Tha Tian è il punto di riferimento per Wat Pho e il traghetto per Wat Arun."
-        },
-        {
-          "icon": "🚕",
-          "title": "Tuk-Tuk",
-          "body": "Iconici ma da usare con criterio: trattate sempre il prezzo prima di salire e diffidate di chi vi propone tour 'gratis'. Utili per brevi tratti pittoreschi. Per spostamenti pratici preferite Grab."
+          "body": "Il modo più panoramico per raggiungere i templi del centro storico. Il traghetto orange-flag collega oltre 30 pier lungo il fiume — biglietto 15 THB. Il pier N8 Tha Tian è il riferimento per Wat Pho e il ferry per Wat Arun."
         },
         {
           "icon": "🚂",
           "title": "Airport Rail Link",
-          "body": "La linea ferroviaria collega l'aeroporto Suvarnabhumi al centro in 30 minuti per soli 45 THB — molto più economico e veloce del taxi nelle ore di punta. Fermata finale: Phaya Thai (BTS interchange)."
+          "body": "Collega l'aeroporto Suvarnabhumi al centro in 30 minuti per 45 THB. Molto più rapido del taxi nelle ore di punta. Fermata finale: Phaya Thai (BTS interchange)."
         }
       ],
-      "note": "Consiglio pratico: salvate l'indirizzo degli hotel in tailandese sullo smartphone — molti tassisti non leggono l'alfabeto latino."
+      "note": "Consiglio pratico: salvate l'indirizzo degli hotel in tailandese — molti tassisti non leggono l'alfabeto latino."
     },
     {
       "type": "poi",
@@ -198,59 +174,42 @@
       "title": "Il nostro viaggio",
       "items": [
         {
+          "day": 1,
           "name": "Wat Phra Kaew & Grand Palace",
           "maps_url": "https://www.google.com/maps/place/The+Grand+Palace/@13.7500232,100.4913325,17z",
           "book_url": "https://www.royalgrandpalace.th/en/buy-ticket/form",
-          "image": "images/Thai/Bangkok/Wat_Phra_Kaew.jpeg",
-          "description": "Il Grande Palazzo Reale di Bangkok non è solo un monumento, ma una vera e propria città nella città, circondata da mura bianche imponenti. Entrando, verrai immediatamente colpito dalla maestosità dell'architettura thailandese, dove ogni superficie sembra brillare sotto il sole grazie all'uso sapiente di mosaici di specchi, foglie d'oro e decorazioni intricate. Il Wat Phra Kaew, situato all'interno del complesso, ospita il sacro Buddha di Smeraldo, la statua più venerata di tutta la Thailandia, scolpita in un unico pezzo di giada verde. È un luogo di profonda spiritualità dove i fedeli arrivano da ogni parte del Paese per pregare, creando un'atmosfera unica di devozione mescolata al turismo internazionale. Ti consiglio vivamente di arrivare all'apertura, alle 8:30 del mattino, per evitare non solo il caldo soffocante delle ore centrali, ma soprattutto l'enorme afflusso di gruppi organizzati. Essendo un luogo sacro, è obbligatorio seguire un rigoroso codice di abbigliamento: spalle e ginocchia devono essere coperte sia per gli uomini che per le donne. Se dimentichi di coprirti, all'ingresso è possibile affittare indumenti adeguati, ma è molto meglio arrivare preparati. Prenditi tutto il tempo per osservare i dettagli dei guardiani giganti in ceramica che sorvegliano gli ingressi e le stupa dorate che svettano verso il cielo blu. È un'esperienza che definisce il viaggio in Thailandia e che ti regala scatti fotografici spettacolari ad ogni angolo del percorso. Ricorda che il biglietto d'ingresso costa 500 THB e include anche l'accesso ad altri musei nel complesso, rendendolo un investimento culturale imprescindibile."
+          "description": "Siamo arrivati all'apertura per evitare la folla del mezzogiorno — consiglio fondamentale. Il complesso del Grand Palace ti travolge subito: oro ovunque, mosaici di specchi, guardiani in ceramica dai volti fieri. Wat Phra Kaew, il Tempio del Buddha di Smeraldo, è il cuore spirituale della Thailandia. Ingresso 500 THB, abbigliamento coperto obbligatorio."
         },
         {
-          "name": "Pranzo da Tha Arun",
-          "maps_url": "https://maps.app.goo.gl/M5j5EfF5f8BSeeeM9",
-          "image": "images/Thai/Bangkok/Tha_Arun.jpeg",
-          "description": "Situato strategicamente lungo le sponde del fiume Chao Phraya, il ristorante Tha Arun è un piccolo tesoro nascosto che offre una delle viste più iconiche di tutta Bangkok. Sedersi qui significa godere di una prospettiva privilegiata sul Wat Arun, specialmente quando il sole inizia a scendere e il tempio si illumina riflettendosi nelle acque del fiume. L'ambiente è informale ma accogliente, perfetto per una pausa rilassante dopo aver camminato per ore tra i templi del centro storico. La cucina proposta è quella thailandese autentica, fatta di sapori intensi, spezie fresche e ingredienti locali di alta qualità. Ti consiglio assolutamente di provare il loro Pad Thai, che qui viene cucinato con la giusta dose di tamarindo e arachidi croccanti, oltre alla zuppa di cocco con pollo che risulta cremosa e profumata. Osservare i battelli che solcano incessantemente il fiume mentre assapori piatti prelibati è un'esperienza che riconcilia con il mondo. A differenza dei posti più turistici, qui l'atmosfera resta autentica e il personale è estremamente cordiale, facendoti sentire come a casa nonostante la posizione privilegiata. È il posto perfetto per ricaricare le energie prima di continuare l'esplorazione del quartiere circostante, lontano dalla confusione dei mercati principali. Il rapporto qualità-prezzo è eccellente, considerando la posizione così ricercata e la freschezza degli ingredienti utilizzati in cucina. È uno di quei locali che difficilmente trovi descritto dettagliatamente nelle guide di massa, il che lo rende ancora più prezioso per chi cerca un'esperienza gastronomica genuina. Assicurati di chiedere un tavolo in veranda per vivere al massimo l'esperienza sensoriale di questo angolo di pace urbana."
-        },
-        {
-          "name": "Wat Pho — Buddha Sdraiato",
+          "day": 1,
+          "name": "Wat Pho & Wat Arun",
           "maps_url": "https://www.google.com/maps/place/Wat+Phra+Chetuphon+Wimon+Mangkhalaram/@13.7464237,100.4901984,17z",
-          "image": "images/Thai/Bangkok/Buddah_sdraiato.jpeg",
-          "description": "Il Wat Pho è celebre in tutto il mondo principalmente per il suo monumentale Buddha Sdraiato, una statua lunga ben 46 metri e alta 15, che lascia ogni visitatore senza fiato per la sua imponenza. La figura è interamente rivestita di foglia d'oro e decorata con intarsi in madreperla sulle piante dei piedi, che raffigurano i 108 simboli di buon auspicio tipici della tradizione buddhista. Entrare nella sala che ospita questa meraviglia è un momento di grande impatto visivo, dove il silenzio quasi religioso dei visitatori accentua la grandiosità dell'opera. Oltre al Buddha, il complesso del Wat Pho è un vero e proprio museo all'aperto che merita di essere esplorato con molta calma. È considerato il luogo di nascita del massaggio tradizionale thailandese e ancora oggi ospita una rinomata scuola dove i monaci e i professionisti perpetuano quest'arte antica. Ti consiglio di aggirarti tra i numerosi chiostri interni, dove troverai centinaia di statue di Buddha in diverse posizioni e una serie di stupa (chedì) colorati, decorati con ceramiche cinesi dai motivi floreali. L'atmosfera qui è decisamente più tranquilla e intima rispetto al Grand Palace, permettendoti di godere meglio dei dettagli architettonici e della serenità del luogo. Spesso si possono vedere i monaci che camminano placidamente tra i cortili, rendendo l'esperienza molto più autentica. L'ingresso costa circa 200 THB, un prezzo molto contenuto per la quantità di tesori d'arte che avrai modo di ammirare. Non dimenticare di fare un giro tra i piccoli giardini curati che collegano i vari edifici, perfetti per una pausa riflessiva. È indubbiamente una delle tappe più significative per comprendere la profonda cultura religiosa di questa città cosmopolita e millenaria."
+          "description": "Il Buddha sdraiato di 46 metri coperto di foglia d'oro ti soprende per le dimensioni. Wat Arun si raggiunge con un traghetto da Tha Tian Pier — 3 THB — e da vicino scopri che l'intera torre è ricoperta di porcellana colorata cinese. La vista dal livello più alto sul fiume è mozzafiato."
         },
         {
-          "name": "Wat Arun — Tempio dell'Alba",
-          "maps_url": "https://www.google.com/maps/place/Wat+Arun+Ratchawararam+Ratchawaramahawihan/@13.7438652,100.4858691,17z",
-          "image": "images/Thai/Bangkok/Wat_Arun_1.jpeg",
-          "description": "Il Wat Arun, noto come il Tempio dell'Alba, è forse l'edificio religioso più iconico dello skyline di Bangkok, riconoscibile per la sua guglia centrale che si staglia prepotentemente verso l'alto. Si raggiunge facilmente attraversando il fiume Chao Phraya con un piccolo traghetto locale dal molo di Tha Tian, un tragitto breve ma che offre una prospettiva magnifica. Quando ti avvicini, rimarrai stupito dal dettaglio: non è una struttura uniforme, ma un capolavoro di mosaici realizzati con frammenti di porcellana cinese colorata. Questi pezzi furono donati dai fedeli nel corso dei secoli e assemblati per creare decorazioni floreali che ricoprono l'intera superficie della struttura. La salita sui ripidi gradini che portano ai livelli superiori del tempio è un'esperienza da non perdere, sebbene richieda una buona dose di attenzione. Una volta arrivato in cima, la vista panoramica che si apre sul fiume e sui tetti dorati del quartiere storico è assolutamente mozzafiato, specialmente durante le ore della giornata in cui la luce riflette sulle ceramiche. Il nome 'Tempio dell'Alba' deriva proprio dal fatto che, al sorgere del sole, la luce colpisce la superficie perlata della struttura, facendola brillare come se avesse una luce propria. L'ingresso ha un costo di 100 THB ed è un'attività accessibile che premia il visitatore con una delle viste più belle della metropoli. Ti consiglio di dedicare almeno un'ora alla visita per riuscire ad apprezzare tutti i minuscoli dettagli delle decorazioni che rendono questo tempio unico al mondo. È il luogo ideale per scattare foto memorabili e vivere un momento di connessione profonda con la storia e l'estetica della Thailandia classica."
-        },
-        {
-          "name": "Chinatown di notte — Yaowarat Road",
+          "day": 1,
+          "name": "Chinatown & Vertigo Moon Bar",
           "maps_url": "https://maps.google.com/?q=Yaowarat+Road+Chinatown+Bangkok",
-          "image": "images/Thai/Bangkok/Chinatown.jpeg",
-          "description": "Esplorare Yaowarat Road a Bangkok dopo il tramonto è un'esperienza sensoriale che non dimenticherai mai, trasformandosi in una delle capitali mondiali dello street food. L'intera strada si illumina a giorno con insegne al neon giganti in caratteri cinesi, creando un'atmosfera vibrante, caotica e incredibilmente energica che definisce la vita notturna locale. Il profumo di granchi saltati, ostriche fritte freschissime, zuppe fumanti e dim sum al vapore riempie l'aria, attirando frotte di persone affamate in cerca della cena perfetta. È un labirinto di bancarelle dove l'unico modo per vivere l'esperienza al meglio è mangiare in piedi o su sgabelli di plastica improvvisati sul marciapiede. Non aver paura di avventurarti nei vicoli secondari che si diramano dalla strada principale; spesso sono proprio questi vicoli a nascondere le perle gastronomiche più autentiche e dai prezzi più accessibili. La qualità del cibo è altissima ovunque, e con un budget di 150–200 THB a persona potrai saziarti con una varietà incredibile di piatti che non troveresti altrove. È il paradiso degli amanti del cibo, dove ogni boccone racconta una storia di contaminazione tra la cucina cinese e quella thailandese. Il fervore di questa zona ti trasmette l'anima pulsante di Bangkok, un luogo dove la tradizione non è mai statica ma continua a evolversi nelle pentole delle cucine di strada. Ti suggerisco di andare senza un programma fisso: lasciati guidare dall'istinto e dalle code più lunghe, perché sono solitamente il segnale che lì si mangia qualcosa di eccezionale. È una tappa obbligatoria per chiunque voglia comprendere lo stile di vita locale, lontano dai ristoranti chic e immerso nel cuore pulsante della città notturna."
+          "description": "Yaowarat Road la sera è un labirinto di profumi e neon: granchi saltati, ostriche fritte, dim sum al vapore in piedi. Poi il contrasto totale: cocktail al 61° piano del Banyan Tree Hotel, vista a 360° su tutta Bangkok illuminata. Dress code smart casual, arrivate prima del tramonto."
         },
         {
-          "name": "Vertigo Moon Bar — Banyan Tree Hotel",
-          "maps_url": "https://www.google.com/maps/place/Vertigo+%26+Moon+Bar+Rooftop/@13.7235647,100.5347345,17z",
-          "description": "Il Vertigo Moon Bar, situato al 61° piano del Banyan Tree Hotel, offre una delle esperienze più vertiginose e spettacolari che si possano fare in tutta la capitale thailandese. Non appena arrivi sulla terrazza, ti troverai di fronte a una vista a 360 gradi su una metropoli infinita che brilla sotto di te come una distesa di gioielli. Il design del bar è audace: non ci sono pareti o barriere visive che bloccano lo sguardo, facendoti sentire letteralmente sospeso tra le nuvole. È il posto ideale per ordinare un cocktail ricercato e godersi il passaggio cromatico dal tramonto infuocato al blu intenso della notte. La trasformazione dello skyline di Bangkok mentre si sorseggia un drink è qualcosa che resta impresso nella memoria come uno dei momenti più magici del viaggio. Sebbene i cocktail abbiano prezzi premium (intorno ai 500 THB), l'atmosfera, il servizio impeccabile e l'esperienza visiva valgono assolutamente l'investimento. Ricorda che è richiesto un dress code smart casual, quindi evita infradito o abbigliamento troppo sportivo per garantirti l'accesso. Ti consiglio vivamente di arrivare un po' prima del tramonto per assicurarti un posto vicino alla balaustra e vedere la città cambiare volto man mano che le luci notturne si accendono. È il luogo perfetto per una serata speciale, un appuntamento romantico o semplicemente per celebrare un momento unico in cima al mondo. La sensazione di libertà che si prova stando in piedi su quella terrazza, circondati dal vento leggero dell'alta quota e dalla frenesia della città sottostante, è impagabile. Non dimenticare di portare con te una macchina fotografica di buona qualità, poiché ogni angolazione offre un'inquadratura perfetta da cartolina che non vorrai perdere."
+          "day": 2,
+          "name": "Bang Kachao — Isola Polmone",
+          "maps_url": "https://maps.google.com/?q=Bang+Kachao+Bangkok",
+          "description": "Un'ansa del Chao Phraya che la giungla ha riconquistato a pochi km dal centro. Bici noleggiate al molo, 13 km tra orti, templi minori e mangrovie. Silenzio totale nel cuore di una megalopoli da 10 milioni di abitanti — uno dei contrasti più surreali del viaggio."
         },
         {
+          "day": 3,
           "name": "Cooking Class da Poo & Friends",
           "maps_url": "https://maps.google.com/?q=Helping+Hands+Cooking+School+Bangkok",
           "book_url": "https://helpinghandscookingschool.com",
-          "image": "images/Thai/Bangkok/Cooking_class.jpeg",
-          "description": "Partecipare a una lezione di cucina con Poo & Friends non è solo un modo per imparare nuove ricette, ma è un'immersione profonda nella cultura gastronomica thailandese. La giornata inizia quasi sempre con una visita guidata al mercato locale, un momento cruciale in cui la chef ti insegna a riconoscere gli ingredienti freschi, come il galanga, le foglie di kaffir lime e i diversi tipi di peperoncino. Imparare a conoscere le materie prime direttamente alla fonte ti permette di capire meglio il delicato bilanciamento tra i sapori agrodolci, piccanti e salati che caratterizzano ogni piatto thailandese. Una volta tornati in cucina, inizierai a preparare concretamente circa quattro piatti, seguendo passo dopo passo le indicazioni della chef che spiega con passione la filosofia dietro ogni preparazione. La soddisfazione di mangiare ciò che hai appena cucinato, scoprendo di aver preparato un Pad Thai incredibilmente autentico, è impagabile. L'ambiente è informale, amichevole e molto accogliente, rendendolo un'attività perfetta anche per chi è alle prime armi in cucina ma vuole sporcarsi le mani. È un'esperienza che va oltre la semplice ricetta: impari a pensare come uno chef locale e ad apprezzare la complessità dietro sapori che sembrano semplici. Ti consiglio caldamente di prenotare con diverse settimane di anticipo, poiché le classi sono piccole e la scuola è molto ricercata da chi cerca un'esperienza di qualità. Al termine della lezione, non tornerai a casa solo con la pancia piena, ma con una conoscenza preziosa e la capacità di ricreare i sapori del viaggio una volta rientrato. È un investimento culturale che trasforma il tuo modo di guardare al cibo thailandese per sempre."
+          "description": "Tre ore di cucina thai con mercato incluso: ingredienti freschi, 4 piatti a testa. Il nostro pad thai era clamorosamente buono. La chef spiega la filosofia del bilanciamento agrodolcepicante alla base della cucina thai. Prenotate con settimane di anticipo."
         },
         {
-          "name": "Golden Mount — Wat Saket",
+          "day": 3,
+          "name": "Golden Mount & Mercato di Chatuchak",
           "maps_url": "https://maps.google.com/?q=Wat+Saket+Golden+Mount+Bangkok",
-          "image": "images/Thai/Bangkok/Wat_Saket.jpg",
-          "description": "Il Golden Mount, o Wat Saket, rappresenta un'oasi di pace e spiritualità situata nel cuore pulsante della vecchia Bangkok, facilmente distinguibile dalla sua stupa dorata che brilla in cima a una collina artificiale. Per raggiungere la vetta dovrai percorrere circa 318 gradini, un sentiero che si snoda tra una vegetazione rigogliosa, campane tintinnanti e piccole cascate che rendono la salita un momento di meditazione attiva. È un luogo molto amato dai residenti locali, che lo frequentano per pregare e trovare rifugio lontano dal traffico frenetico della capitale thailandese. Una volta arrivato in cima, sarai ricompensato con una delle viste panoramiche più autentiche e spettacolari sulla città vecchia, dove i templi storici si mescolano con i quartieri tradizionali. Il momento ideale per visitarlo è decisamente il tramonto, quando la luce calda del sole colpisce la cupola dorata rendendola quasi abbagliante e trasformando il cielo in uno spettacolo di colori. L'ingresso ha un costo contenuto di 100 THB, un prezzo irrisorio per la bellezza del panorama e l'atmosfera di tranquillità che si respira. È un luogo meno frequentato dai flussi turistici di massa rispetto ad altri monumenti, il che lo rende perfetto per godersi il silenzio e osservare la vita quotidiana dei monaci. Gli orari di apertura sono dalle 7:30 alle 19:00, permettendoti di scegliere il momento perfetto per la visita. Ti consiglio di prenderti il tempo necessario durante la salita per ammirare i dettagli e goderti la brezza che spesso soffia in cima alla collina. È una tappa che ti regala una prospettiva diversa di Bangkok, lontana dai grattacieli moderni e più legata alla tradizione profonda del Paese."
-        },
-        {
-          "name": "Mercato di Chatuchak",
-          "maps_url": "https://maps.google.com/?q=Chatuchak+Weekend+Market+Bangkok",
-          "image": "images/Thai/Bangkok/Chatuchak.jpg",
-          "description": "Il mercato di Chatuchak è un'esperienza che sfida ogni descrizione, essendo uno dei mercati all'aperto più vasti e frenetici dell'intero Sud-est asiatico, attivo esclusivamente durante i weekend. Con oltre 15.000 bancarelle che si estendono su una superficie immensa, il mercato attira ogni giorno circa 200.000 visitatori da ogni parte del mondo. Qui si trova letteralmente di tutto: dall'abbigliamento vintage unico nel suo genere alle ceramiche artigianali, fino a piante esotiche, opere d'arte contemporanea e ogni tipo di prelibatezza gastronomica. Perdersi tra i suoi labirintici corridoi è parte integrante del divertimento, anche se ti consiglio vivamente di scaricare una mappa offline dei settori per orientarti meglio. Il caldo può diventare intenso, quindi il consiglio d'oro è di arrivare il prima possibile, verso le 9:00 del mattino, per esplorare le sezioni più interessanti prima che la folla diventi troppo densa e la temperatura salga troppo. Oltre allo shopping, Chatuchak è un paradiso per gli amanti dello street food, dove potrai assaggiare specialità da ogni angolo della Thailandia in un unico posto. È un'esplosione di colori, profumi e suoni che ti lascerà sbalordito dalla vastità dell'offerta e dalla vitalità della gente. Ricorda di essere pronto a contrattare i prezzi, poiché fa parte della cultura del mercato, ma fallo sempre con il sorriso sulle labbra. È un luogo dove puoi trascorrere un'intera giornata senza mai annoiarti, scoprendo oggetti bizzarri e regali unici da portare a casa. È un'esperienza di sopravvivenza urbana e gioia pura per chi ama l'energia travolgente dei mercati asiatici. Assicurati di indossare scarpe comode, perché camminerai per chilometri senza nemmeno accorgertene tra una bancarella e l'altra."
+          "description": "318 gradini fino alla stupa dorata del Wat Saket — al tramonto la luce bagna i tetti del quartiere storico. Poi Chatuchak: il mercato del weekend più grande del sudest asiatico, 15.000 bancarelle in labirinti coperti. Ci si perde — è parte del divertimento."
         }
       ]
     },
@@ -260,20 +219,15 @@
       "title": "Ulteriori attività da provare",
       "items": [
         {
-          "name": "Bang Kachao — Isola Polmone",
-          "maps_url": "https://maps.google.com/?q=Bang+Kachao+Bangkok",
-          "description": "Un'ansa del fiume Chao Phraya che la giungla ha riconquistato a pochi km dal centro. Si noleggia una bici al molo e si pedalano 13 km tra orti, templi minori e mangrovie. Silenzio totale nel cuore di una megalopoli da 10 milioni di abitanti. Raggiungibile in 30 min con Grab + ferry."
-        },
-        {
           "name": "Massaggio thai da Health Land Spa",
           "maps_url": "https://maps.google.com/?q=Health+Land+Spa+Bangkok",
           "book_url": "https://reservation.healthlandspa.com/booking-step3",
-          "description": "Il massaggio thai tradizionale qui è una cerimonia: due ore su materassino di cotone con tecniche tramandate per secoli. Health Land è la migliore catena della città per qualità-prezzo. Massaggio thai 2h: circa 600 THB. Prenotate online."
+          "description": "Due ore su materassino di cotone con tecniche tramandate per secoli. Health Land è la migliore catena della città per qualità-prezzo. Massaggio thai 2h: circa 600 THB."
         },
         {
           "name": "Crociera notturna sui Khlong",
           "maps_url": "https://maps.google.com/?q=Khlong+Bangkok+Canal+Tour",
-          "description": "I canali secondari di Bangkok mostrano la città com'era prima dei grattacieli: case su palafitte, templi minuscoli, bambini che pescano. Tour privati in longtail boat da 1–2 ore a partire da 1.000 THB per barca."
+          "description": "I canali secondari di Bangkok mostrano la città com'era prima dei grattacieli: case su palafitte, templi minuscoli, bambini che pescano. Tour privati in longtail boat 1–2 ore da 1.000 THB per barca."
         }
       ]
     },
@@ -285,17 +239,12 @@
         {
           "name": "Sanguan Sri",
           "maps_url": "https://www.google.com/maps/place/Sanguan+Sri/@13.7419774,100.5474585,16z",
-          "description": "Aperto solo a pranzo (9:00–15:00), una delle mense thai più amate dai locali dell'area Lumphini. Specialità: Khai Palo (uova in brodo di spezie cinque elementi) e Gaeng Pa (curry di giungla senza latte di cocco). Prezzi da 80–120 THB a piatto. Niente menu in inglese."
-        },
-        {
-          "name": "Krua Apsorn — Dinso Road",
-          "maps_url": "https://maps.google.com/?q=Krua+Apsorn+Dinso+Bangkok",
-          "description": "Ristorante storico famoso per il crab curry con uova salate. Atmosfera semplice, tavoli di plastica, fila all'ingresso. Chiude alle 19:30 — arrivate entro le 18:30. Costo medio 200–300 THB."
+          "description": "Aperto solo a pranzo (9:00–15:00), una delle mense thai più amate dai locali dell'area Lumphini. Khai Palo e Gaeng Pa da 80–120 THB. Niente menu in inglese."
         },
         {
           "name": "Sirocco Sky Bar — Lebua State Tower",
           "maps_url": "https://www.google.com/maps/place/Sky+Bar/@13.7213922,100.5143564,16z",
-          "description": "Il bar reso famoso dal film Hangover 2, al 64° piano della Lebua Tower. Cocktail da 600–800 THB, dress code rigoroso. Alternativa premium al Vertigo con vista sul golfo di Siam nelle notti limpide."
+          "description": "Il bar del film Hangover 2, al 64° piano. Cocktail da 600–800 THB, dress code rigoroso. Vista sul golfo di Siam nelle notti limpide."
         }
       ]
     }

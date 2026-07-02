@@ -236,6 +236,22 @@ function overviewSection(sec, mapsData, sectionId) {
       const mapsPin = s.maps_url
         ? `<a class="stop-maps-link" href="${s.maps_url}" target="_blank" rel="noopener">📍</a>` : '';
       const transportHtml = !isLast ? buildTransport(s) : '';
+      // City-continuity connector card (shown inside last stop body)
+      const nextCityHtml = s.next_city ? `
+        <a class="city-next-connector" href="city.html?continent=${continent}&country=${country}&city=${s.next_city.id}">
+          <span class="city-next-icon">✈️</span>
+          <div class="city-next-body">
+            <div class="city-next-label">Prossima tappa</div>
+            <div class="city-next-name">${s.next_city.name}</div>
+            <div class="city-next-meta">
+              <span class="city-next-transport">${s.next_city.transport}</span>
+              <span class="city-next-duration">${s.next_city.duration}</span>
+            </div>
+            ${s.next_city.note ? `<div class="city-next-note">${s.next_city.note}</div>` : ''}
+          </div>
+          <span class="city-next-arrow">→</span>
+        </a>` : '';
+
       const connector = !isLast ? `
         <div class="stop-connector">
           <div class="stop-connector-line"></div>
@@ -251,6 +267,7 @@ function overviewSection(sec, mapsData, sectionId) {
           <div class="stop-body">
             <span class="stop-name">${s.name}</span>${mapsPin}
             ${transportHtml}
+            ${nextCityHtml}
           </div>
         </div>`;
     }).join('');
@@ -337,26 +354,26 @@ function narrativePoiSection(sec, secIdx, sectionId) {
 
   if (hasDays) {
     const byDay = {};
-    const dayTitles = {};
     sec.items.forEach(it => {
-      const d = it.day != null ? it.day : 0;
-      if (!byDay[d]) { byDay[d] = []; dayTitles[d] = it.day_title || ''; }
+      const d = it.day != null ? String(it.day) : '0';
+      if (!byDay[d]) byDay[d] = [];
       byDay[d].push(it);
     });
-    // Sort days numerically
     const sortedDays = Object.keys(byDay).sort((a,b) => Number(a)-Number(b));
     let globalIdx = 0;
-    bodyHtml = sortedDays.map(day => {
+    bodyHtml = sortedDays.map((day, groupIdx) => {
       const items = byDay[day];
-      const entriesHtml = items.map(item => buildNarrativeEntry(item, globalIdx++)).join('');
-      const dtitle = dayTitles[day];
+      // Reset alt index per group so entries alternate within each day
+      const entriesHtml = items.map((item, i) => buildNarrativeEntry(item, i)).join('');
+      const bgStyle = groupIdx % 2 === 1 ? 'background:rgba(13,27,42,.03);border-radius:12px;padding:1.5rem 1.2rem;' : '';
       return `
-        <div class="narrative-day-marker">
-          <div class="narrative-day-badge"><span class="nb-label">Giorno</span><span class="nb-num">${day}</span></div>
-          ${dtitle ? `<h3 class="narrative-day-title">${dtitle}</h3>` : ''}
-          <div class="narrative-day-line"></div>
-        </div>
-        <div class="narrative-entries">${entriesHtml}</div>`;
+        <div class="narrative-day-group" style="${bgStyle}">
+          <div class="narrative-group-header">
+            <div class="narrative-group-badge"><span class="ng-label">Giorno</span><span class="ng-num">${day}</span></div>
+            <div class="narrative-group-line"></div>
+          </div>
+          <div class="narrative-entries">${entriesHtml}</div>
+        </div>`;
     }).join('');
   } else {
     const entriesHtml = (sec.items || []).map((item, i) => buildNarrativeEntry(item, i)).join('');

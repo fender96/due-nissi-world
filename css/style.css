@@ -859,6 +859,111 @@ footer {
   margin-bottom: 1rem;
 }
 
+/* ===== CITY CONTINUITY CONNECTOR ===== */
+.city-next-connector {
+  margin-top: .8rem;
+  background: linear-gradient(135deg, rgba(13,27,42,.97), rgba(13,27,42,.85));
+  border: 1px solid rgba(196,98,45,.3);
+  border-radius: 12px;
+  padding: 1rem 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-decoration: none;
+  transition: border-color .2s, transform .2s;
+  cursor: pointer;
+}
+.city-next-connector:hover {
+  border-color: var(--burnt);
+  transform: translateY(-1px);
+}
+.city-next-icon {
+  font-size: 1.4rem;
+  flex-shrink: 0;
+}
+.city-next-body { flex: 1; min-width: 0; }
+.city-next-label {
+  font-size: .6rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--burnt);
+  margin-bottom: .2rem;
+}
+.city-next-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  color: var(--white);
+  margin-bottom: .15rem;
+}
+.city-next-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  align-items: center;
+}
+.city-next-transport {
+  font-size: .72rem;
+  font-weight: 600;
+  color: var(--sand);
+}
+.city-next-duration {
+  font-size: .7rem;
+  color: rgba(232,213,176,.6);
+  border-left: 1px solid rgba(232,213,176,.2);
+  padding-left: .5rem;
+}
+.city-next-note {
+  font-size: .68rem;
+  color: rgba(232,213,176,.45);
+  margin-top: .25rem;
+  line-height: 1.5;
+}
+.city-next-arrow {
+  color: var(--burnt);
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+/* ===== NARRATIVE DAY GROUPS ===== */
+.narrative-day-group {
+  margin-bottom: 2.5rem;
+}
+.narrative-day-group:last-child { margin-bottom: 0; }
+.narrative-group-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: .6rem;
+  border-bottom: 1px solid rgba(13,27,42,.07);
+}
+.narrative-group-badge {
+  background: var(--burnt);
+  color: var(--white);
+  border-radius: 6px;
+  padding: .2rem .7rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.1;
+  flex-shrink: 0;
+}
+.narrative-group-badge .ng-label {
+  font-size: .55rem; font-weight: 700; letter-spacing: .12em;
+  text-transform: uppercase; opacity: .85;
+}
+.narrative-group-badge .ng-num {
+  font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700;
+}
+.narrative-group-line {
+  flex: 1; height: 1px;
+  background: linear-gradient(to right, rgba(196,98,45,.25), transparent);
+}
+
+/* Alternate bg for day groups inside narrative-section */
+.narrative-day-group:nth-child(even) { background: transparent; }
+
 /* ===== COME SPOSTARSI ===== */
 .transport-section {
   padding: 4rem 0;

@@ -10,7 +10,7 @@
     {
       "type": "intro",
       "title": "Khao Sok in 2 giorni",
-      "text": "Khao Sok è una tappa quasi segreta per chi viaggia in Thailandia: un parco nazionale con la foresta pluviale più antica del pianeta (160 milioni di anni), un lago artificiale circondato da pareti calcaree a picco sull'acqua e una fauna notturna da documentario National Geographic. Ci siamo fermati due giorni arrivando da Ao Nang in pullman."
+      "text": "Khao Sok è una tappa quasi segreta: un parco nazionale con la foresta pluviale più antica del pianeta (160 milioni di anni) e una fauna notturna da documentario National Geographic. Ci siamo fermati due giorni arrivando da Ao Nang in van."
     },
     {
       "type": "overview",
@@ -18,41 +18,41 @@
       "days": [
         {
           "day": 1,
-          "title": "Arrivo & Night Safari",
-          "subtitle": "Trasferimento da Ao Nang, sistemazione nel parco, tour notturno della foresta.",
           "stops": [
             {
-              "name": "Partenza da Ao Nang in pullman",
+              "name": "Partenza da Ao Nang in van condiviso",
               "maps_url": "https://maps.google.com/?q=Ao+Nang+Krabi+Thailand"
             },
             {
               "name": "Arrivo a Khao Sok — sistemazione in bungalow",
-              "transports": [
-                { "mode": "bus", "distance": "170 km", "duration": "3h (van condiviso)" }
-              ],
+              "transports": [{ "mode": "bus", "distance": "170 km", "duration": "3h (van condiviso)" }],
               "maps_url": "https://maps.google.com/?q=Khao+Sok+National+Park+Surat+Thani"
             },
             {
-              "name": "Night Safari nella foresta Khao Sok (19:00–22:00)",
+              "name": "Night Safari nella foresta (19:00–22:00)",
+              "transports": [{ "mode": "walk", "distance": "0.5 km", "duration": "5 min dal lodge" }],
               "maps_url": "https://maps.google.com/?q=Khao+Sok+National+Park"
             }
           ]
         },
         {
           "day": 2,
-          "title": "Trekking nel Parco Nazionale & Rientro",
-          "subtitle": "Giornata intera di trekking nella foresta pluviale, ritorno ad Ao Nang in serata.",
           "stops": [
             {
               "name": "Full-day trekking Khao Sok National Park",
               "maps_url": "https://maps.google.com/?q=Khao+Sok+National+Park"
             },
             {
-              "name": "Rientro ad Ao Nang in pullman serale",
-              "transports": [
-                { "mode": "bus", "distance": "170 km", "duration": "3h (van condiviso)" }
-              ],
-              "maps_url": "https://maps.google.com/?q=Ao+Nang+Krabi+Thailand"
+              "name": "Rientro ad Ao Nang in van serale",
+              "transports": [{ "mode": "bus", "distance": "170 km", "duration": "3h (van condiviso)" }],
+              "maps_url": "https://maps.google.com/?q=Ao+Nang+Krabi+Thailand",
+              "next_city": {
+                "name": "Krabi & Ao Nang",
+                "id": "ao-nang",
+                "transport": "🚐 Van condiviso Khao Sok→Ao Nang",
+                "duration": "3h",
+                "note": "Van prenotabile direttamente al lodge. Partenze serali verso le 16:00–17:00"
+              }
             }
           ]
         }
@@ -76,20 +76,15 @@
         {
           "icon": "🚐",
           "title": "Van condiviso da Ao Nang / Krabi",
-          "body": "Il modo più comodo per arrivare è il van condiviso prenotabile nelle agenzie locali di Ao Nang. Il viaggio dura circa 3 ore e costa 300–400 THB. I van partono tipicamente la mattina e il pomeriggio. Potete prenotare anche il ritorno direttamente al lodge."
-        },
-        {
-          "icon": "🚐",
-          "title": "Van condiviso da Surat Thani",
-          "body": "Surat Thani è il punto di partenza alternativo se venite dai ferry delle isole (Ko Samui, Ko Pha Ngan). Distanza: circa 2 ore di van. Surat Thani è raggiungibile anche in treno da Bangkok."
+          "body": "Il modo più comodo: van condiviso prenotabile nelle agenzie di Ao Nang. Circa 3 ore, 300–400 THB. Partenze mattino e pomeriggio. Prenotate anche il ritorno direttamente al lodge."
         },
         {
           "icon": "🏕️",
           "title": "Alloggio nel parco",
-          "body": "Consigliamo i bungalow sul fiume all'interno del parco — immersi nella foresta, con il suono della giungla come colonna sonora. Prenotate con almeno 2 settimane di anticipo nei mesi alti (dic–gen). Il lodge organizza direttamente il night safari e il trekking."
+          "body": "Consigliate i bungalow sul fiume — immersi nella foresta, suono della giungla come colonna sonora. Prenotate con almeno 2 settimane di anticipo nei mesi alti (dic–gen). Il lodge organizza night safari e trekking."
         }
       ],
-      "note": "Khao Sok non ha un 'centro città' — tutto si svolge lungo una strada principale con lodge, ristoranti e agenzie di trekking. Portate repellente per insetti e scarpe da trekking impermeabili."
+      "note": "Portate repellente per insetti e scarpe da trekking impermeabili. Nessuna ATM nel parco — prelevate prima."
     },
     {
       "type": "poi",
@@ -97,16 +92,18 @@
       "title": "Il nostro viaggio",
       "items": [
         {
+          "day": 1,
           "name": "Night Safari nella foresta",
           "maps_url": "https://maps.google.com/?q=Khao+Sok+National+Park",
           "book_url": "https://www.seeksophie.com/",
-          "description": "La guida ci aspettava con le torce frontali alle 19:00. Tre ore nella foresta pluviale al buio totale: scorpioni che brillano alla luce UV, serpenti tra i rami, il canto degli sciacalli in lontananza. Abbiamo visto un cobra reale a due metri da noi. La guida era tranquilla — noi un po' meno. Un'esperienza che ti ricorda che questa foresta esiste da 160 milioni di anni e che voi siete gli ospiti."
+          "description": "La guida ci aspettava con le torce frontali alle 19:00. Tre ore nella foresta pluviale al buio totale: scorpioni che brillano alla luce UV, serpenti tra i rami, il canto degli sciacalli in lontananza. Abbiamo visto un cobra reale a due metri da noi. La guida era tranquilla — noi un po' meno."
         },
         {
+          "day": 2,
           "name": "Trekking Full Day nel Parco Nazionale",
           "maps_url": "https://maps.google.com/?q=Khao+Sok+National+Park",
           "book_url": "https://www.seeksophie.com/experiences/khao-sok-full-day-hiking-in-khao-sok-national-park-oroz3r94zv",
-          "description": "Sveglia all'alba, zaino in spalla e sei ore di trekking attraverso la foresta più antica del mondo. Abbiamo attraversato fiumi guadando l'acqua fino alle ginocchia, visto fiori di Rafflesia (il più grande al mondo), e mangiato seduti su un tronco caduto ascoltando le scimmie urlatrici sopra di noi. Difficoltà media. La guida SeekSophie era preparata e appassionata — prenotate con largo anticipo."
+          "description": "Sei ore di trekking attraverso la foresta più antica del mondo. Fiumi guadati fino alle ginocchia, fiori di Rafflesia (il più grande del mondo), pranzo seduti su un tronco ascoltando le scimmie urlatrici. Difficoltà media. Prenotate con largo anticipo."
         }
       ]
     }
