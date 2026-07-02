@@ -388,18 +388,6 @@ function narrativePoiSection(sec, secIdx, sectionId) {
   </div></section>`;
 }
 
-function resolveAsset(path){
-    if(!path) return "";
-    if(path.startsWith("http")) return path;
-
-    const base =
-        location.hostname === "fender96.github.io"
-            ? "/due-nissi-world/"
-            : "/";
-
-    return base + path.replace(/^\/+/, "");
-}
-
 function buildNarrativeEntry(item, globalIdx) {
   // Even idx: text left + img right; odd: img left + text right
   const isReverse = globalIdx % 2 === 1;
@@ -414,7 +402,7 @@ function buildNarrativeEntry(item, globalIdx) {
     : '';
 
   const imgHtml = item.image
-    ? `<img src="${resolveAsset(item.image)}" alt="${item.name}" loading="lazy">`
+    ? `<img src="${item.image}" alt="${item.name}" loading="lazy">`
     : `<div class="narrative-img-placeholder"><span>${item.emoji || '🏙️'}</span><p>Foto in arrivo</p></div>`;
 
   return `
@@ -481,39 +469,16 @@ function sleepSection(sec){return `<section class="section"><div class="section-
     // Pre-fetch maps section so overview can merge it
     const mapsSec = data.sections.find(s => s.type === 'maps');
 
-data.sections.forEach((sec, idx) => {
-    const sid = `section-${sec.type}-${idx}`;
-
-    try {
-        switch (sec.type) {
-            case "intro":
-                container.insertAdjacentHTML("beforeend", introSection(sec, data.sections));
-                break;
-
-            case "overview":
-                container.insertAdjacentHTML("beforeend", overviewSection(sec, mapsSec, sid));
-                break;
-
-            case "transport":
-                container.insertAdjacentHTML("beforeend", transportSection(sec, sid));
-                break;
-
-            case "poi":
-                container.insertAdjacentHTML("beforeend", narrativePoiSection(sec, idx, sid));
-                break;
-
-            case "sleep":
-                container.insertAdjacentHTML("beforeend", sleepSection(sec, sid));
-                break;
-
-            case "maps":
-                break;
-        }
-
-    } catch (err) {
-        console.error("Errore nella sezione:", sec.type, err);
-    }
-});
+    data.sections.forEach((sec, idx) => {
+      const sid = `section-${sec.type}-${idx}`;
+      if (sec.type === 'poi')        container.insertAdjacentHTML('beforeend', narrativePoiSection(sec, idx, sid));
+      if (sec.type === 'itinerary')  container.insertAdjacentHTML('beforeend', itinerarySection(sec, sid));
+      if (sec.type === 'intro')      container.insertAdjacentHTML('beforeend', introSection(sec, data.sections));
+      if (sec.type === 'overview')   container.insertAdjacentHTML('beforeend', overviewSection(sec, mapsSec, sid, continentId, countryId));
+      if (sec.type === 'transport')  container.insertAdjacentHTML('beforeend', transportSection(sec, sid));
+      if (sec.type === 'maps')       { /* merged into overview — skip */ }
+      if (sec.type === 'sleep')      container.insertAdjacentHTML('beforeend', sleepSection(sec, sid));
+    });
     // Riattiva expand dopo render dinamico
     document.querySelectorAll('.poi-expand').forEach(btn => {
       btn.addEventListener('click', () => {
