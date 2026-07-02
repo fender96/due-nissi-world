@@ -188,7 +188,7 @@ function introSection(sec, allSections) {
 
   return `<div class="page-anchors-section"><div class="page-anchors-inner">${linksHtml}</div></div>`;
 }
-function overviewSection(sec, mapsData, sectionId) {
+function overviewSection(sec, mapsData, sectionId, continentId, countryId) {
   const mapsLookup = {};
   if (mapsData) {
     (mapsData.days || []).forEach(md => { mapsLookup[md.day] = md; });
@@ -419,11 +419,15 @@ function sleepSection(sec){return `<section class="section"><div class="section-
 
 /* ===== Main ===== */
 (async () => {
+  try {
   const params      = new URLSearchParams(location.search);
-  const continentId = params.get('c');
-  const countryId   = params.get('co');
-  const cityId      = params.get('ci');
-  if (!continentId || !countryId || !cityId) return;
+  const continentId = params.get('c') || params.get('continent');
+  const countryId   = params.get('co') || params.get('country');
+  const cityId      = params.get('ci') || params.get('city');
+  if (!continentId || !countryId || !cityId) {
+    console.error('city.html: parametri URL mancanti', {continentId, countryId, cityId});
+    return;
+  }
 
   const [resCont, resCountry, resCity] = await Promise.all([
     fetch(`content/${continentId}/continent.json`),
@@ -470,7 +474,7 @@ function sleepSection(sec){return `<section class="section"><div class="section-
       if (sec.type === 'poi')        container.insertAdjacentHTML('beforeend', narrativePoiSection(sec, idx, sid));
       if (sec.type === 'itinerary')  container.insertAdjacentHTML('beforeend', itinerarySection(sec, sid));
       if (sec.type === 'intro')      container.insertAdjacentHTML('beforeend', introSection(sec, data.sections));
-      if (sec.type === 'overview')   container.insertAdjacentHTML('beforeend', overviewSection(sec, mapsSec, sid));
+      if (sec.type === 'overview')   container.insertAdjacentHTML('beforeend', overviewSection(sec, mapsSec, sid, continentId, countryId));
       if (sec.type === 'transport')  container.insertAdjacentHTML('beforeend', transportSection(sec, sid));
       if (sec.type === 'maps')       { /* merged into overview — skip */ }
       if (sec.type === 'sleep')      container.insertAdjacentHTML('beforeend', sleepSection(sec, sid));
@@ -484,6 +488,9 @@ function sleepSection(sec){return `<section class="section"><div class="section-
         btn.textContent = desc.classList.contains('clamped') ? '▼ Espandi' : '▲ Riduci';
       });
     });
+  }
+  } catch(e) {
+    console.error('city.html render error:', e);
   }
 })();
 </script>
